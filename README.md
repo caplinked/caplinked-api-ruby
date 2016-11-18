@@ -1,2 +1,3 @@
 # caplinked-api-ruby
-Ruby Gem wrapper for Caplinked's API
+
+Ruby SDK for Caplinked's API

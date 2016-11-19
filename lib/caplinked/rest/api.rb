@@ -1,3 +1,14 @@
+require 'caplinked/rest/activities'
+require 'caplinked/rest/downloads'
+require 'caplinked/rest/files'
+require 'caplinked/rest/folders'
+require 'caplinked/rest/groups'
+require 'caplinked/rest/organizations'
+require 'caplinked/rest/permissions'
+require 'caplinked/rest/teams'
+require 'caplinked/rest/users'
+require 'caplinked/rest/workspaces'
+
 module Caplinked
   module REST
     module API

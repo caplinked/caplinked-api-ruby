@@ -1,5 +1,8 @@
+require 'caplinked/rest/api'
+
 module Caplinked
   class Client
+    include Caplinked::REST::API
     attr_accessor :api_key, :api_host
 
     # Usage:

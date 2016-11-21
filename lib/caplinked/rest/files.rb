@@ -11,6 +11,16 @@ module Caplinked
         file = options.stringify_keys['file'].b
         perform_put_with_binary_data('/api/v1/files/upload', params, file)
       end
+
+      # Options:
+      #   - id (required)
+      #   - workspace_id (required)
+      #   - page_number
+      def get_file_info(options = {})
+        params = options.stringify_keys.slice('id', 'workspace_id', 'page_number')
+        file_id = params.delete('id') 
+        perform_get('/api/v1/files/' + file_id.to_s, params)
+      end
     end
   end
 end

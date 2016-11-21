@@ -4,6 +4,10 @@ require 'active_support'
 
 module Caplinked
   module Utils
+    def perform_get(path, params = {})
+      perform_request(:get, path, { params: params })
+    end
+
     def perform_put_with_binary_data(path, params = {}, file)
       perform_request(:put, path, { params: params, body: file })
     end

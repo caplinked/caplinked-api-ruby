@@ -20,6 +20,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'addressable', '~> 2.3'
   spec.add_dependency 'http', '~> 2.0'
   spec.add_dependency 'http-form_data', '~> 1.0'
-  spec.add_dependency 'rest-client', '~> 2.0'
   spec.add_development_dependency 'bundler', '~> 1.0'
 end

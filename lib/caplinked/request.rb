@@ -10,16 +10,16 @@ module Caplinked
     def initialize(client, request_method, path, options = {})
       @client = client
       @request_method = request_method
-      @uri = Addressable::URI.parse("https://#{client.api_host}#{path}")
+      @uri = Addressable::URI.parse("#{client.api_scheme}://#{client.api_host}#{path}")
       @path = @uri.path
       @options = options
     end
 
     def perform
-      options_key = @request_method == :get ? :params : :form
-      response = HTTP.headers('X-Token' => client.api_key).public_send(@request_method, @uri.to_s, options_key => @options[:params])
+      @uri.query_values = @options.delete(:params)
+      response = HTTP.headers('X-Token' => client.api_key).request(@request_method, @uri.to_s, @options)
       response_headers = response.headers
-      response_body = response.body.empty? ? '' : symbolize_keys!(response.parse)
+      response.body.empty? ? '' : response.parse.symbolize_keys!
     end
   end
 end

@@ -7,8 +7,8 @@ module Caplinked
       #   - file_name (required)
       #   - file (required)
       def upload_file(options = {})
-        params = options.stringify_keys.fetch('workspace_id', 'folder_id', 'file_name')
-        file = options.stringify_keys['file']
+        params = options.stringify_keys.slice('workspace_id', 'folder_id', 'file_name')
+        file = options.stringify_keys['file'].b
         perform_put_with_binary_data('/api/v1/files/upload', params, file)
       end
     end

@@ -1,3 +1,4 @@
+require 'caplinked/error'
 require 'caplinked/request'
 require 'caplinked/utils'
 require 'caplinked/rest/api'

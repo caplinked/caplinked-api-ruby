@@ -21,6 +21,16 @@ module Caplinked
         file_id = params.delete('id') 
         perform_get('/api/v1/files/' + file_id.to_s, params)
       end
+
+      # Options:
+      #   - id (required)
+      #   - workspace_id (required)
+      #   - expiring_token (required)
+      def get_file_viewer(options = {})
+        params = options.stringify_keys.slice('id', 'workspace_id', 'expiring_token')
+        file_id = params.delete('id') 
+        perform_get('/api/v1/files/' + file_id.to_s + '/viewer', params)
+      end
     end
   end
 end

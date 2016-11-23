@@ -8,6 +8,18 @@ module Caplinked
       perform_request(:get, path, { params: params })
     end
 
+    def perform_delete(path, params = {})
+      perform_request(:delete, path, { params: params })
+    end
+
+    def perform_put(path, params = {})
+      perform_request(:put, path, { params: params })
+    end
+
+    def perform_post(path, params = {})
+      perform_request(:post, path, { params: params })
+    end
+
     def perform_put_with_binary_data(path, params = {}, file)
       perform_request(:put, path, { params: params, body: file })
     end

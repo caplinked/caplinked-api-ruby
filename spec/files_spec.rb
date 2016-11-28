@@ -8,7 +8,6 @@ describe Caplinked::Client, :vcr => true do
   it 'Upload a File' do
     VCR.use_cassette("files/upload_file") do
       client = Caplinked::Client.new api_key: key, api_scheme: 'https'
-      #binding.pry
       new_file = client.upload_file workspace_id: 5886, folder_id: 32277, file_name: 'pg_0317.pdf', file: File.join(File.dirname(__FILE__), "/files/pg_0317.pdf")
 
       expect(new_file[:file_name]).to eq("pg_0317.pdf")

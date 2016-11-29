@@ -119,7 +119,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.12.5)
+  bundler (~> 1.13.5)
   caplinked-api-ruby!
   dotenv (~> 2.1.1)
   jeweler (~> 2.0.1)
@@ -131,4 +131,4 @@ DEPENDENCIES
   webmock (~> 2.1.0)
 
 BUNDLED WITH
-   1.12.5
+   1.13.5

@@ -1,6 +1,9 @@
 require 'simplecov'
 require 'vcr'
 require 'pry'
+require 'dotenv'
+
+Dotenv.load
 
 module SimpleCov::Configuration
   def clean_filters

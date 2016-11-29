@@ -1,6 +1,4 @@
 require 'spec_helper'
-require 'dotenv'
-Dotenv.load
 
 describe Caplinked::Client, :vcr => true do
   let(:key) { ENV["API_KEY"] }

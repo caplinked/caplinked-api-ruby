@@ -119,7 +119,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler
+  bundler (~> 1.0)
   caplinked-api-ruby!
   dotenv (~> 2.1.1)
   jeweler (~> 2.0.1)

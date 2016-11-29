@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.caplinked.com/api/v1/files/37639?workspace_id=5886
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Token:
+      - "<ENCODED X-Token>"
+      Connection:
+      - close
+      Host:
+      - sandbox.caplinked.com
+      User-Agent:
+      - http.rb/2.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 24 Nov 2016 06:00:51 GMT
+      Etag:
+      - W/"f132a9f1e77b7348ba4a4967483b6d15"
+      Server:
+      - caplinked
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 5c00c31c-7920-45ac-87ab-87febacb8b77
+      X-Runtime:
+      - '0.032790'
+      Content-Length:
+      - '450'
+      Connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: '{"id":37639,"title":"gem update 2.pdf","file_name":"pg_0307.pdf","file_content_type":"application/pdf","file_size":"60939","index":1,"folder_id":36884,"pages":1,"version":1,"infected":null,"viewer":{"status":"Ready","page_number":1,"expiring_tokens":{"thumbnail":"removed","normal":"removed"}},"created_at":"2016-11-10T15:49:17.770-08:00","updated_at":"2016-11-23T14:31:19.641-08:00"}'
+    http_version:
+  recorded_at: Thu, 24 Nov 2016 06:00:51 GMT
+recorded_with: VCR 3.0.3

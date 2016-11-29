@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.caplinked.com/api/v1/files/45907/move?destination_folder_id=36885&workspace_id=5886
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Token:
+      - "<ENCODED X-Token>"
+      Connection:
+      - close
+      Host:
+      - sandbox.caplinked.com
+      User-Agent:
+      - http.rb/2.1.0
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 24 Nov 2016 06:23:45 GMT
+      Etag:
+      - W/"936151fa8f79def1436c1c530183cc6a"
+      Server:
+      - caplinked
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - ce4ce7e8-4793-4a3d-bcf4-5ab2ea9347ef
+      X-Runtime:
+      - '0.082248'
+      Content-Length:
+      - '222'
+      Connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: '{"id":45907,"title":"api_update.pdf","file_name":"pg_0317.pdf","file_size":"155766","file_content_type":"application/pdf","index":1,"created_at":"2016-11-23T22:12:01.481-08:00","updated_at":"2016-11-23T22:23:45.516-08:00"}'
+    http_version: 
+  recorded_at: Thu, 24 Nov 2016 06:23:47 GMT
+recorded_with: VCR 3.0.3

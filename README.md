@@ -31,3 +31,31 @@ Get File viewer:
 client = Caplinked::Client.new api_key: 'YOUR_KEY_HERE', api_host: 'sandbox.caplinked.com', api_scheme: 'https'
 file_viewer = client.get_file_viewer id: file_info[:id], workspace_id: 1, expiring_token: file_info[:viewer]['expiring_tokens']['normal']
 ```
+
+Delete File:
+
+```
+client = Caplinked::Client.new api_key: 'YOUR_KEY_HERE', api_host: 'sandbox.caplinked.com', api_scheme: 'https'
+delete_file = client.delete_file workspace_id: 1, id: file_info[:id]
+```
+
+Update File info:
+
+```
+client = Caplinked::Client.new api_key: 'YOUR_KEY_HERE', api_host: 'sandbox.caplinked.com', api_scheme: 'https'
+update_file = client.update_file_info workspace_id: 1, id: file_info[:id], 'file[title]': 'name', 'file[index]': file[:index]
+```
+
+Copy File:
+
+```
+client = Caplinked::Client.new api_key: 'YOUR_KEY_HERE', api_host: 'sandbox.caplinked.com', api_scheme: 'https'
+copy_file = client.copy_file id: file_info[:id], workspace_id: 1, destination_folder_id: folder[:id]
+```
+
+Move File:
+
+```
+client = Caplinked::Client.new api_key: 'YOUR_KEY_HERE', api_host: 'sandbox.caplinked.com', api_scheme: 'https'
+move_file = client.move_file id: file_info[:id], workspace_id: 1, destination_folder_id: folder[:id]
+```

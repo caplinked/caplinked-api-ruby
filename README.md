@@ -10,6 +10,17 @@ Add Rubygem to Bundle:
 ```
 gem 'caplinked-api-ruby'
 ```
+## Activities:
+
+Get Workspace Activities:
+
+```
+client = Caplinked::Client.new api_key: 'YOUR_KEY_HERE', api_host: 'sandbox.caplinked.com', api_scheme: 'https'
+get_workspace_activities = client.client.get_workspace_activities workspace_id: 1, user_id: 1
+```
+
+
+## Files:
 
 Upload a File:
 

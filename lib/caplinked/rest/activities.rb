@@ -2,8 +2,8 @@ module Caplinked
   module REST
     module Activities
       # Options:
-      #   - user_id (optional)
       #   - workspace_id (required)
+      #   - user_id (optional)
       #   - per_page
       #   - page
       def get_workspace_activities(options = {})

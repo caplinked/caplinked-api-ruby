@@ -1,11 +1,10 @@
 require 'spec_helper'
 
 describe Caplinked::Client, :vcr => true do
-  let(:key) { ENV["API_KEY"] }
+  let!(:client) { Caplinked::Client.new api_key: ENV["API_KEY"], api_scheme: 'https' }
 
   it 'It returns workspace activity' do
     VCR.use_cassette("activities/workspace_activites") do
-      client = Caplinked::Client.new api_key: key, api_scheme: 'https'
       get_workspace_activities = client.get_workspace_activities(
         workspace_id: 5886)
 
@@ -21,7 +20,6 @@ describe Caplinked::Client, :vcr => true do
 
   it 'It returns workspace activity with user filter' do
     VCR.use_cassette("activities/workspace_activites_user_filter") do
-      client = Caplinked::Client.new api_key: key, api_scheme: 'https'
       get_workspace_activities = client.get_workspace_activities(
         workspace_id: 5886, user_id: 99)
 

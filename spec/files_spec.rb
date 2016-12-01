@@ -58,7 +58,7 @@ describe Caplinked::Client, :vcr => true do
 
   it 'Move File:' do
     VCR.use_cassette("files/move_file") do
-      move_file = client.move_file id: 45907, workspace_id: 5886, destination_folder_id: 36885
+      move_file = client.move_file id: 45907, workspace_id: 5886, destination_folder_id: 37106
 
       expect(move_file[:id]).to eq(45907)
     end

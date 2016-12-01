@@ -16,8 +16,8 @@ module Caplinked
       perform_request(:put, path, { params: params })
     end
 
-    def perform_post(path, params = {})
-      perform_request(:post, path, { params: params })
+    def perform_post(path, params = {}, body = {}, headers = {})
+      perform_request(:post, path, { params: params, body: body, headers: headers })
     end
 
     def perform_put_with_binary_data(path, params = {}, file)

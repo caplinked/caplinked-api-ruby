@@ -1,11 +1,6 @@
 module Caplinked
   module REST
     module Activities
-      # Options:
-      #   - workspace_id (required)
-      #   - user_id (optional)
-      #   - per_page
-      #   - page
       def get_workspace_activities(options = {})
         params = options.stringify_keys.slice('workspace_id', 'user_id', 'per_page', 'page')
         file_id = params.delete('workspace_id')

@@ -38,7 +38,7 @@ describe Caplinked::Client, :vcr => true do
 
   it 'Update file info' do
     VCR.use_cassette("files/update_file_info") do
-      update_file = client.update_file_info workspace_id: 5886, id: 45906, 'file[title]': 'api_update', 'file[index]': 1
+      update_file = client.update_file_info workspace_id: 5886, id: 45906, file: { title: 'api_update', index: 1 }
 
       expect(update_file[:title]).to eq('api_update.pdf')
       expect(update_file[:index]).to eq(1)

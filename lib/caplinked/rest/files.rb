@@ -26,9 +26,10 @@ module Caplinked
       end
 
       def update_file_info(options = {})
-        params = options.stringify_keys.slice('id', 'workspace_id', 'file[title]', 'file[index]')
+        params = options.stringify_keys.slice('id')
         file_id = params.delete('id')
-        perform_put('/api/v1/files/' + file_id.to_s, params)
+        body = options.stringify_keys.slice('workspace_id', 'file')
+        perform_put('/api/v1/files/' + file_id.to_s, params, body.to_json, { 'Content-Type' => 'application/json' })
       end
 
       def copy_file(options = {})

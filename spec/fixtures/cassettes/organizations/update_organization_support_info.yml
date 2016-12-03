@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://sandbox.caplinked.com/api/v1/organizations/4639/support_information
+    body:
+      encoding: UTF-8
+      string: '{"phone_number":"88374","email":"jazz@update.com","website":"www.jazzbilling.com"}'
+    headers:
+      Content-Type:
+      - application/json
+      X-Token:
+      - "<ENCODED X-Token>"
+      Connection:
+      - close
+      Host:
+      - sandbox.caplinked.com
+      User-Agent:
+      - http.rb/2.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sat, 03 Dec 2016 01:15:59 GMT
+      Etag:
+      - W/"b7b7797bb19e3ea0037522b88cbfc988"
+      Server:
+      - caplinked
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - d89e473b-bcce-47ce-9da1-81faf0a0cf89
+      X-Runtime:
+      - '0.014927'
+      Content-Length:
+      - '200'
+      Connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: '{"id":4904,"support_number":"88374","support_email":"jazz@update.com","support_website":"www.jazzbilling.com","created_at":"2016-12-02T17:02:40.866-08:00","updated_at":"2016-12-02T17:02:40.866-08:00"}'
+    http_version:
+  recorded_at: Sat, 03 Dec 2016 01:15:51 GMT
+recorded_with: VCR 3.0.3

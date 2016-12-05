@@ -2,7 +2,7 @@ require 'simplecov'
 require 'vcr'
 require 'pry'
 require 'dotenv'
-require 'WebMock'
+require 'webmock'
 
 Dotenv.load
 

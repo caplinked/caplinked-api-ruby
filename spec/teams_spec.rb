@@ -4,7 +4,7 @@ describe Caplinked::Client, :vcr => true do
   let!(:client) { Caplinked::Client.new api_key: ENV["ORG_KEY"], api_scheme: 'https' }
 
   it 'create team' do
-    VCR.use_cassette("teams/create_team") do
+    VCR.use_cassette("teams/create_team", :record => :none) do
       create_team = client.create_team team: { name: 'api_team',
                                allowed_workspaces: 5, allowed_admins: 5,
                                drm_enabled: false, watermarking: true,
@@ -18,7 +18,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'get team info' do
-    VCR.use_cassette("teams/get_team_info") do
+    VCR.use_cassette("teams/get_team_info", :record => :none) do
       get_team_info = client.get_team_info id: 183
 
       expect(get_team_info).to eq({:id=>183, :name=>"api_team", :team_owner_id=>92,
@@ -30,7 +30,7 @@ describe Caplinked::Client, :vcr => true do
 
 
   it 'update team' do
-    VCR.use_cassette("teams/update_team") do
+    VCR.use_cassette("teams/update_team", :record => :none) do
       update_team = client.update_team_info id: 183, team: { name: 'api_team_x4',
                                allowed_workspaces: 10, allowed_admins: 10,
                                drm_enabled: false, watermarking: true,
@@ -44,7 +44,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'add team member' do
-    VCR.use_cassette("teams/add_team_member") do
+    VCR.use_cassette("teams/add_team_member", :record => :none) do
       add_team_member = client.add_team_member id: 183, user_id: 101
 
       expect(add_team_member).to include({user: {"id"=>101, "first_name"=>"John",
@@ -58,7 +58,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'remove team member' do
-    VCR.use_cassette("teams/remove_team_member") do
+    VCR.use_cassette("teams/remove_team_member", :record => :none) do
       remove_team_member = client.remove_team_member id: 183, user_id: 101
 
       expect(remove_team_member).to eq({:status=>200,
@@ -67,7 +67,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'show team member' do
-    VCR.use_cassette("teams/show_team_members") do
+    VCR.use_cassette("teams/show_team_members", :record => :none) do
       get_list_of_team_members = client.get_list_of_team_members id: 183
 
       expect(get_list_of_team_members).to eq([{"user"=>{"id"=>92,

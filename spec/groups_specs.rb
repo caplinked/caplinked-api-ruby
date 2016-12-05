@@ -4,7 +4,7 @@ describe Caplinked::Client, :vcr => true do
   let!(:client) { Caplinked::Client.new api_key: ENV["API_KEY"], api_scheme: 'https' }
 
   it 'list all groups in workspace' do
-    VCR.use_cassette("groups/list_all_groups_in_workspace") do
+    VCR.use_cassette("groups/list_all_groups_in_workspace", :record => :none) do
       list_all_groups_in_workspace = client.list_all_groups_in_workspace workspace_id: 5886
 
       expect(list_all_groups_in_workspace).to eq([{"id"=>26403, "name"=>"new_group",
@@ -27,7 +27,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'create group' do
-    VCR.use_cassette("groups/create_group") do
+    VCR.use_cassette("groups/create_group", :record => :none) do
       create_group = client.create_group group: {name: 'api_group',
                       workspace_id: 5886, file_managing_abilities: false}
 
@@ -39,7 +39,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'get group info' do
-    VCR.use_cassette("groups/get_group_info") do
+    VCR.use_cassette("groups/get_group_info", :record => :none) do
       get_group_info = client.get_group_info id: 26407, workspace_id: 5886
 
       expect(get_group_info).to eq({:id=>26407, :name=>"api_group_updated",
@@ -50,7 +50,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'update group' do
-    VCR.use_cassette("groups/update_group") do
+    VCR.use_cassette("groups/update_group", :record => :none) do
       update_group = client.update_group id: 26407, workspace_id: 5886,
             group: {name: 'api_group_updated', file_managing_abilities: true}
 
@@ -62,7 +62,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'delete group' do
-    VCR.use_cassette("groups/delete_group") do
+    VCR.use_cassette("groups/delete_group", :record => :none) do
       delete_group = client.delete_group id: 26407, workspace_id: 5886
 
       expect(delete_group).to eq({"id":26407,"name":"api_group_updated"})
@@ -70,7 +70,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'update group drm' do
-    VCR.use_cassette("groups/update_group_drm") do
+    VCR.use_cassette("groups/update_group_drm", :record => :none) do
       update_group_drm = client.update_group_drm id: 26403, workspace_id: 5886,
             group: {drm_enabled: true, drm_expires_after: '2017-03-03'}
 
@@ -82,7 +82,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'update group drm' do
-    VCR.use_cassette("groups/update_group_drm") do
+    VCR.use_cassette("groups/update_group_drm", :record => :none) do
       update_group_drm = client.update_group_drm id: 26403, workspace_id: 5886,
             group: {drm_enabled: true, drm_expires_after: '2017-03-03'}
 
@@ -94,7 +94,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'disable drm expiration' do
-    VCR.use_cassette("groups/disable_drm_expiration") do
+    VCR.use_cassette("groups/disable_drm_expiration", :record => :none) do
       disable_drm_expiration = client.disable_drm_expiration id: 26403, workspace_id: 5886
 
       expect(disable_drm_expiration).to eq({:id=>26403, :name=>"new_group",
@@ -105,7 +105,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'watermarking for group' do
-    VCR.use_cassette("groups/watermarking_for_group") do
+    VCR.use_cassette("groups/watermarking_for_group", :record => :none) do
       watermarking_for_group = client.watermarking_for_group id: 26403, workspace_id: 5886,
             group: {watermarking: true}
 
@@ -117,7 +117,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'enable access expiration' do
-    VCR.use_cassette("groups/enable_access_expiration") do
+    VCR.use_cassette("groups/enable_access_expiration", :record => :none) do
       enable_access_expiration = client.enable_access_expiration id: 26403, workspace_id: 5886,
             group: {expire_workspace_access_at: "2017-03-03"}
 
@@ -129,7 +129,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'disable access expiration' do
-    VCR.use_cassette("groups/disable_access_expiration") do
+    VCR.use_cassette("groups/disable_access_expiration", :record => :none) do
       disable_access_expiration = client.disable_access_expiration id: 26403, workspace_id: 5886
 
       expect(disable_access_expiration).to eq({:id=>26403, :name=>"new_group",
@@ -140,7 +140,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'add group member' do
-    VCR.use_cassette("groups/add_group_member") do
+    VCR.use_cassette("groups/add_group_member", :record => :none) do
       add_group_member = client.add_group_member id: 26403, user_id: 101,
                          workspace_id: 5886, send_email: false
 
@@ -149,7 +149,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'remove group member' do
-    VCR.use_cassette("groups/remove_group_member") do
+    VCR.use_cassette("groups/remove_group_member", :record => :none) do
       remove_group_member = client.remove_group_member id: 26403, user_id: 101,
                             workspace_id: 5886
 
@@ -158,7 +158,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'show group member' do
-    VCR.use_cassette("groups/list_all_group_members") do
+    VCR.use_cassette("groups/list_all_group_members", :record => :none) do
       list_all_group_members = client.list_all_group_members id: 26403,
                                workspace_id: 5886
 

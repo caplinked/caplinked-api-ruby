@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Caplinked::Client, :vcr => true do
 
   it 'create user' do
-    VCR.use_cassette("users/create_user") do
+    VCR.use_cassette("users/create_user", :record => :none) do
       client = Caplinked::Client.new api_key: ENV["ORG_KEY"], api_scheme: 'https'
       create_user = client.create_user user: { email: 'api+user+12@caplinked.com',
                                  first_name: 'api', last_name: 'user+12',
@@ -17,7 +17,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'get user' do
-    VCR.use_cassette("users/get_user_info") do
+    VCR.use_cassette("users/get_user_info", :record => :none) do
       client = Caplinked::Client.new api_key: ENV["USER_KEY"], api_scheme: 'https'
       get_user_info = client.get_user_info
 
@@ -30,7 +30,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'update user' do
-    VCR.use_cassette("users/update_user_info") do
+    VCR.use_cassette("users/update_user_info", :record => :none) do
       client = Caplinked::Client.new api_key: ENV["USER_KEY"], api_scheme: 'https'
       update_user = client.update_user user: { email: 'user+12@caplinked.com'}
 

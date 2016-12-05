@@ -4,7 +4,7 @@ describe Caplinked::Client, :vcr => true do
   let!(:client) { Caplinked::Client.new api_key: ENV["API_KEY"], api_scheme: 'https' }
 
   it 'get organization info' do
-    VCR.use_cassette("permissions/get_folder_permissions") do
+    VCR.use_cassette("permissions/get_folder_permissions", :record => :none) do
       get_folder_permissions = client.get_folder_permissions id: 32339,
                                 workspace_id: 5886, group_id: 26403
 
@@ -20,7 +20,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'get organization info' do
-    VCR.use_cassette("permissions/update_folder_permissions") do
+    VCR.use_cassette("permissions/update_folder_permissions", :record => :none) do
       update_folder_permissions = client.update_folder_permissions id: 32339,
                                 workspace_id: 5886, group_id: 26403,
                                 verb: 'revoke', folder_action: 'download'

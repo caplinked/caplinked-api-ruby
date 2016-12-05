@@ -4,7 +4,7 @@ describe Caplinked::Client, :vcr => true do
   let!(:client) { Caplinked::Client.new api_key: ENV["ORG_KEY"], api_scheme: 'https' }
 
   it 'list all workspaces for a team' do
-    VCR.use_cassette("workspaces/list_all_workspaces_for_a_team") do
+    VCR.use_cassette("workspaces/list_all_workspaces_for_a_team", :record => :none) do
       list_all_workspaces_for_a_team = client.list_all_workspaces_for_a_team team_id: 183
 
       expect(list_all_workspaces_for_a_team).to eq([])
@@ -12,7 +12,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'create a workspace' do
-    VCR.use_cassette("workspaces/create_workspaces") do
+    VCR.use_cassette("workspaces/create_workspaces", :record => :none) do
       create_workspace = client.create_workspace team_id: 183, workspace: { name: 'api_workspacex3'}
 
       expect(create_workspace).to eq({:id=>5933, :name=>"api_workspacex3",
@@ -23,7 +23,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'get workspace info' do
-    VCR.use_cassette("workspaces/get_workspace_info") do
+    VCR.use_cassette("workspaces/get_workspace_info", :record => :none) do
       get_workspace_info = client.get_workspace_info id: 5933
 
       expect(get_workspace_info).to eq({:id=>5933, :name=>"api_workspacex3",
@@ -34,7 +34,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'update workspace info' do
-    VCR.use_cassette("workspaces/update_workspace_info") do
+    VCR.use_cassette("workspaces/update_workspace_info", :record => :none) do
       update_workspace_info = client.update_workspace_info id: 5933, workspace:
                                       {name: "api_workspacex3_update"}
 

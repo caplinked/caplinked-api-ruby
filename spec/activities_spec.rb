@@ -4,7 +4,7 @@ describe Caplinked::Client, :vcr => true do
   let!(:client) { Caplinked::Client.new api_key: ENV["API_KEY"], api_scheme: 'https' }
 
   it 'It returns workspace activity' do
-    VCR.use_cassette("activities/workspace_activites") do
+    VCR.use_cassette("activities/workspace_activites", :record => :none) do
       get_workspace_activities = client.get_workspace_activities(
         workspace_id: 5886)
 
@@ -19,7 +19,7 @@ describe Caplinked::Client, :vcr => true do
   end
 
   it 'It returns workspace activity with user filter' do
-    VCR.use_cassette("activities/workspace_activites_user_filter") do
+    VCR.use_cassette("activities/workspace_activites_user_filter", :record => :none) do
       get_workspace_activities = client.get_workspace_activities(
         workspace_id: 5886, user_id: 99)
 

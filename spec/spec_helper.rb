@@ -2,6 +2,7 @@ require 'simplecov'
 require 'vcr'
 require 'pry'
 require 'dotenv'
+require 'WebMock'
 
 Dotenv.load
 
@@ -33,8 +34,11 @@ RSpec.configure do |config|
 
 end
 
+WebMock.disable_net_connect!
+
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/fixtures/cassettes'
+  c.default_cassette_options = { record: :once }
   c.hook_into :webmock
   #hides API_KEY in the cassettes
   c.filter_sensitive_data('<ENCODED X-Token>'){ ENV["API_KEY"] }

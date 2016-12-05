@@ -45,14 +45,15 @@ describe Caplinked::Client, :vcr => true do
     end
   end
 
-  xit 'Copy File:' do
+  it 'Copy File:' do
     VCR.use_cassette("files/copy_file") do
-      copy_file = client.copy_file id: 45906, workspace_id: 5886, destination_folder_id: 32339
+      copy_file = client.copy_file id: 38187, workspace_id: 5886, destination_folder_id: 37109
 
-      # needs copy/move fix
-      # binding.pry
-
-      expect(file_info[:id]).to eq(45907)
+      expect(copy_file).to eq({"id":46515,"title":"pg_0306.pdf",
+                                    "file_name":"pg_0306.pdf","file_size":"106396",
+                                    "file_content_type":"application/pdf","index":1,
+                                    "created_at": copy_file[:created_at],
+                                    "updated_at": copy_file[:updated_at]})
     end
   end
 

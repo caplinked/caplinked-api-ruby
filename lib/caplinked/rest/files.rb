@@ -33,9 +33,9 @@ module Caplinked
       end
 
       def copy_file(options = {})
-        params = options.stringify_keys.slice('id', 'workspace_id', 'destination_folder_id')
-        file_id = params.delete('id')
-        perform_post('/api/v1/files/' + file_id.to_s + '/copy', params)
+        body = options.stringify_keys.slice('id', 'workspace_id', 'destination_folder_id')
+        file_id = body.delete('id')
+        perform_post('/api/v1/files/' + file_id.to_s + '/copy', nil, body.to_json, { 'Content-Type' => 'application/json' })
       end
 
       def move_file(options = {})

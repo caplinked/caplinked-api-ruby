@@ -39,5 +39,5 @@ VCR.configure do |c|
   #hides API_KEY in the cassettes
   c.filter_sensitive_data('<ENCODED X-Token>'){ ENV["API_KEY"] }
   c.filter_sensitive_data('<ENCODED X-Token>'){ ENV["ORG_KEY"] }
-  c.filter_sensitive_data('<ENCODED X-Token>'){ ENV["USER_12"] }
+  c.filter_sensitive_data('<ENCODED X-Token>'){ ENV["USER_KEY"] }
 end

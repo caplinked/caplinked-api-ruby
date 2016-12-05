@@ -25,7 +25,7 @@ describe Caplinked::Client, :vcr => true do
     end
   end
 
-  it 'download single file' do
+  it 'download status' do
     VCR.use_cassette("downloads/download_status") do
 
       download_status = client.download_status workspace_id: 5886
@@ -34,7 +34,7 @@ describe Caplinked::Client, :vcr => true do
     end
   end
 
-  it 'download single file' do
+  it 'delete download' do
     VCR.use_cassette("downloads/delete_download") do
 
       delete_download = client.delete_download id: 713, workspace_id: 5886

@@ -1,7 +1,7 @@
 # caplinked-api-ruby
 
 Ruby SDK for Caplinked's API
-
+Documentation at https://developer.caplinked.com/docs
 
 ## Quick start guide:
 
@@ -16,9 +16,40 @@ Get Workspace Activities:
 
 ```
 client = Caplinked::Client.new api_key: 'YOUR_KEY_HERE', api_host: 'sandbox.caplinked.com', api_scheme: 'https'
-get_workspace_activities = client.client.get_workspace_activities workspace_id: 1, user_id: 1
+get_workspace_activities = client.client.get_workspace_activities workspace_id: 1, user_id: user[:id]
 ```
 
+## Downloads:
+
+Create a zip file
+```
+client = Caplinked::Client.new api_key: 'YOUR_KEY_HERE', api_host: 'sandbox.caplinked.com', api_scheme: 'https'
+create_zip_file = client.create_zip_file workspace_id: 1, download: { folder_ids: [folder[:id], folder[:id]] }
+```
+
+Download a single file
+```
+client = Caplinked::Client.new api_key: 'YOUR_KEY_HERE', api_host: 'sandbox.caplinked.com', api_scheme: 'https'
+single_file_download = client.single_file_download file_id: file_info[:id], workspace_id: 1
+```
+
+Download status
+```
+client = Caplinked::Client.new api_key: 'YOUR_KEY_HERE', api_host: 'sandbox.caplinked.com', api_scheme: 'https'
+download_status = client.download_status workspace_id: 1
+```
+
+Delete download
+```
+client = Caplinked::Client.new api_key: 'YOUR_KEY_HERE', api_host: 'sandbox.caplinked.com', api_scheme: 'https'
+delete_download = client.delete_download id: download[:id], workspace_id: 1
+```
+
+Get zip
+```
+client = Caplinked::Client.new api_key: 'YOUR_KEY_HERE', api_host: 'sandbox.caplinked.com', api_scheme: 'https'
+get_zip = client.get_zip id: download[:id], workspace_id: 1
+```
 
 ## Files:
 

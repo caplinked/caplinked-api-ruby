@@ -70,12 +70,6 @@ Get File info:
 file_info = client.get_file_info id: new_file[:id], workspace_id: 1
 ```
 
-Get File viewer:
-
-```
-file_viewer = client.get_file_viewer id: file_info[:id], workspace_id: 1, expiring_token: file_info[:viewer]['expiring_tokens']['normal']
-```
-
 Delete File:
 
 ```

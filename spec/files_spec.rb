@@ -19,14 +19,6 @@ describe Caplinked::Client, :vcr => true do
     end
   end
 
-  xit 'Gets file viewer' do
-    VCR.use_cassette("files/file_viewer", :record => :none) do
-      file_viewer = client.get_file_viewer id: 37639, workspace_id: 5886, expiring_token: 'expiring'
-
-      expect(file_viewer).to eq(37639)
-    end
-  end
-
   it 'Deletes file' do
     VCR.use_cassette("files/delete_file", :record => :none) do
       delete_file = client.delete_file workspace_id: 5886, id: 37639

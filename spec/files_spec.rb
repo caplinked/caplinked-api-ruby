@@ -13,17 +13,17 @@ describe Caplinked::Client, :vcr => true do
 
   it 'Returns file info' do
     VCR.use_cassette("files/file_info", :record => :none) do
-      file_info = client.get_file_info id: 37639, workspace_id: 5886
+      file_info = client.get_file_info id: 38187, workspace_id: 5886
 
-      expect(file_info[:id]).to eq(37639)
+      expect(file_info[:id]).to eq(38187)
     end
   end
 
   xit 'Gets file viewer' do
     VCR.use_cassette("files/file_viewer", :record => :none) do
-      file_viewer = client.get_file_viewer id: 37639, workspace_id: 5886, expiring_token: 'removed'
+      file_viewer = client.get_file_viewer id: 37639, workspace_id: 5886, expiring_token: 'expiring'
 
-      expect(file_info[:id]).to eq(37639)
+      expect(file_viewer).to eq(37639)
     end
   end
 

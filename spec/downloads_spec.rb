@@ -14,14 +14,11 @@ describe Caplinked::Client, :vcr => true do
     end
   end
 
-  xit 'download single file' do
+  it 'download single file' do
     VCR.use_cassette("downloads/download_single_file", :record => :none) do
-
       single_file_download = client.single_file_download file_id: 45907, workspace_id: 5886
 
-      #returns file
-      #HTTP::Error: Unknown MIME type:
-      expect(single_file_download).to eq()
+      expect(single_file_download).to eq({:expiring_url=>"expiring_url", :file_name=>"api_update.pdf"})
     end
   end
 
@@ -43,14 +40,11 @@ describe Caplinked::Client, :vcr => true do
     end
   end
 
-  xit 'get zip' do
+  it 'get zip' do
     VCR.use_cassette("downloads/get_zip", :record => :none) do
 
-      get_zip = client.get_zip id: 714, workspace_id: 5886
-
-      #returns zip
-      #HTTP::Error: Unknown MIME type:
-      expect(get_zip).to eq()
+      get_zip = client.get_zip id: 731, workspace_id: 5886
+      expect(get_zip).to eq({:expiring_url=>"expiring_url", :file_name=>"Multiple_Selections.zip"})
     end
   end
 

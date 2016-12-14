@@ -30,7 +30,7 @@ module Caplinked
 
   private
     def fail_or_return_response_body(code, body, headers)
-      # raise(Caplinked::Error.from_response(body, headers)) if body[:error].present?
+      raise(Caplinked::Error.from_response(body, headers)) if body[:error].present?
       body
     end
   end

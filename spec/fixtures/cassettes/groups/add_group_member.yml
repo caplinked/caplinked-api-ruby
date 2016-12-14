@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.caplinked.com/api/v1/groups/26403/memberships
+    body:
+      encoding: UTF-8
+      string: '{"user_id":101,"workspace_id":5886,"send_email":false}'
+    headers:
+      Content-Type:
+      - application/json
+      X-Token:
+      - "<ENCODED X-Token>"
+      Connection:
+      - close
+      Host:
+      - sandbox.caplinked.com
+      User-Agent:
+      - http.rb/2.1.0
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 05 Dec 2016 21:30:19 GMT
+      Etag:
+      - W/"fd6ae3a519c5c3393b9b7f3731b1f0fc"
+      Server:
+      - caplinked
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - 49e5f4d6-c648-4b17-8b67-411793344aa4
+      X-Runtime:
+      - '0.097690'
+      Content-Length:
+      - '43'
+      Connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: '{"id":36646,"group_id":26403,"user_id":101}'
+    http_version: 
+  recorded_at: Mon, 05 Dec 2016 21:30:10 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://sandbox.caplinked.com/api/v1/organizations/4639
+    body:
+      encoding: UTF-8
+      string: '{"name":"jazz update","description":"jazz org","location":"Los Angeles","billing_email":"jazz@billing.com","url":"www.jazzbilling.com"}'
+    headers:
+      Content-Type:
+      - application/json
+      X-Token:
+      - "<ENCODED X-Token>"
+      Connection:
+      - close
+      Host:
+      - sandbox.caplinked.com
+      User-Agent:
+      - http.rb/2.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sat, 03 Dec 2016 00:55:04 GMT
+      Etag:
+      - W/"d61b9ed99b85077d060df5212bfcad27"
+      Server:
+      - caplinked
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - 46e7ef9d-3b19-4538-b8c7-1b9a2c619b33
+      X-Runtime:
+      - '0.023763'
+      Content-Length:
+      - '358'
+      Connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: '{"id":4639,"name":"jazz update","description":"jazz org","location":"Los
+        Angeles","billing_email":"jazz@billing.com","url":"www.jazzbilling.com","support_number":"(888)
+        799-6849","support_email":"support@caplinked.com","support_website":"http://support.caplinked.com","created_at":"2016-11-10T15:57:28.736-08:00","updated_at":"2016-12-02T16:55:04.885-08:00"}'
+    http_version:
+  recorded_at: Sat, 03 Dec 2016 00:55:14 GMT
+recorded_with: VCR 3.0.3

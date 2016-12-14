@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://sandbox.caplinked.com/api/v1/teams/183
+    body:
+      encoding: UTF-8
+      string: '{"team":{"name":"api_team_again","allowed_workspaces":10,"allowed_admins":10,"drm_enabled":false,"watermarking":true,"suppress_emails":true}}'
+    headers:
+      Content-Type:
+      - application/json
+      X-Token:
+      - "<ENCODED X-Token>"
+      Connection:
+      - close
+      Host:
+      - sandbox.caplinked.com
+      User-Agent:
+      - http.rb/2.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 05 Dec 2016 18:34:45 GMT
+      Etag:
+      - W/"39779f931afd100569ade40426b70761"
+      Server:
+      - caplinked
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - acb7ee7e-f125-4d17-aff4-f85aab93f025
+      X-Runtime:
+      - '0.024017'
+      Content-Length:
+      - '176'
+      Connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: '{"id":183,"name":"api_team_x4","team_owner_id":92,"creator_id":92,"allowed_workspaces":10,"allowed_admins":10,"drm_enabled":false,"watermarking":true,"suppress_emails":true}'
+    http_version:
+  recorded_at: Mon, 05 Dec 2016 18:34:35 GMT
+recorded_with: VCR 3.0.3

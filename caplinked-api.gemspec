@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'caplinked/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'caplinked'
+  spec.name = 'caplinked-api'
   spec.version = Caplinked::Version
   spec.authors = ['Jordan Fowler', 'Jazz Garcha']
   spec.email = %w(dev@caplinked.com)
@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.homepage = 'https://github.com/caplinked/caplinked-api-ruby'
   spec.licenses = %w(MIT)
 
-  spec.files = %w(README.md caplinked.gemspec) + Dir['lib/**/*.rb']
+  spec.files = %w(README.md caplinked-api.gemspec) + Dir['lib/**/*.rb']
   spec.require_paths = %w(lib)
   spec.required_ruby_version = '>= 1.9.3'
 

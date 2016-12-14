@@ -1,4 +1,4 @@
-# caplinked-api-ruby
+# caplinked-api
 
 Ruby SDK for Caplinked's API  
 Documentation at https://developer.caplinked.com/docs
@@ -8,7 +8,7 @@ Documentation at https://developer.caplinked.com/docs
 Add Rubygem to Bundle:
 
 ```
-gem 'caplinked-api-ruby'
+gem 'caplinked-api'
 ```
 
 Assign Client

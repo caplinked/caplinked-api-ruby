@@ -5,7 +5,7 @@ require 'caplinked/version'
 Gem::Specification.new do |spec|
   spec.name = 'caplinked-api-ruby'
   spec.version = Caplinked::Version
-  spec.authors = ['Jordan Fowler']
+  spec.authors = ['Jordan Fowler', 'Jazz Garcha']
   spec.email = %w(dev@caplinked.com)
   spec.description = "Ruby SDK for Caplinked's API."
   spec.summary = spec.description

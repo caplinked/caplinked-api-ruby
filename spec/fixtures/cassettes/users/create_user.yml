@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.caplinked.com/api/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"user":{"email":"api+user+12@caplinked.com","first_name":"api","last_name":"user+12","time_zone":"Pacific
+        Time (US & Canada)"}}'
+    headers:
+      Content-Type:
+      - application/json
+      X-Token:
+      - "<ENCODED X-Token>"
+      Connection:
+      - close
+      Host:
+      - sandbox.caplinked.com
+      User-Agent:
+      - http.rb/2.1.0
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 05 Dec 2016 19:05:02 GMT
+      Etag:
+      - W/"fc4af47b7507c80a613bcc006956ad96"
+      Server:
+      - caplinked
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - cf81a26c-ae39-47df-9973-de7dff6e0100
+      X-Runtime:
+      - '0.189105'
+      Content-Length:
+      - '182'
+      Connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: '{"id":103,"first_name":"Api","last_name":"User+12","email":"api+user+12@caplinked.com","time_zone":"Pacific
+        Time (US \u0026 Canada)","jti":""}'
+    http_version:
+  recorded_at: Mon, 05 Dec 2016 19:05:15 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://sandbox.caplinked.com/api/v1/organizations/4639/memberships?user_id=101
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Token:
+      - "<ENCODED X-Token>"
+      Connection:
+      - close
+      Host:
+      - sandbox.caplinked.com
+      User-Agent:
+      - http.rb/2.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sat, 03 Dec 2016 01:23:22 GMT
+      Etag:
+      - W/"ac4f51638e8c15fbc9eb3db76d946790"
+      Server:
+      - caplinked
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - 3c8571d7-f7bd-4c07-84b9-04454c691306
+      X-Runtime:
+      - '0.013867'
+      Content-Length:
+      - '19'
+      Connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: '{"status_code":200}'
+    http_version:
+  recorded_at: Sat, 03 Dec 2016 01:23:32 GMT
+recorded_with: VCR 3.0.3

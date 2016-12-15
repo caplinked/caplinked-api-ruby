@@ -22,7 +22,7 @@ describe Caplinked::Client, :vcr => true do
     end
   end
 
-  it 'download status' do
+  xit 'download status' do
     VCR.use_cassette("downloads/download_status", :record => :none) do
 
       download_status = client.download_status workspace_id: 5886

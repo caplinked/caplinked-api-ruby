@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Caplinked::Client, :vcr => true do
   let!(:client) { Caplinked::Client.new api_key: ENV["API_KEY"], api_scheme: 'https' }
 
-  it 'get organization info' do
+  xit 'get organization info' do
     VCR.use_cassette("permissions/get_folder_permissions", :record => :none) do
       get_folder_permissions = client.get_folder_permissions id: 32339,
                                 workspace_id: 5886, group_id: 26403

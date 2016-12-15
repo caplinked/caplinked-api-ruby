@@ -66,7 +66,7 @@ describe Caplinked::Client, :vcr => true do
     end
   end
 
-  it 'show team member' do
+  xit 'show team member' do
     VCR.use_cassette("teams/show_team_members", :record => :none) do
       get_list_of_team_members = client.get_list_of_team_members id: 183
 

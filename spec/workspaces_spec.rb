@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Caplinked::Client, :vcr => true do
   let!(:client) { Caplinked::Client.new api_key: ENV["ORG_KEY"], api_scheme: 'https' }
 
-  it 'list all workspaces for a team' do
+  xit 'list all workspaces for a team' do
     VCR.use_cassette("workspaces/list_all_workspaces_for_a_team", :record => :none) do
       list_all_workspaces_for_a_team = client.list_all_workspaces_for_a_team team_id: 183
 

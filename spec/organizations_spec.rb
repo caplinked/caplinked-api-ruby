@@ -67,7 +67,7 @@ describe Caplinked::Client, :vcr => true do
     end
   end
 
-  it 'show organization member' do
+  xit 'show organization member' do
     VCR.use_cassette("organizations/show_organization_members", :record => :none) do
       show_organization_members = client.show_organization_members id: 4639
 

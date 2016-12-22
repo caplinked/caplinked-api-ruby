@@ -19,11 +19,7 @@ module Caplinked
       headers = (@options.delete(:headers) || {}).merge('X-Token' => client.api_key)
       @uri.query_values = @options.delete(:params)
       response = HTTP.headers(headers).request(@request_method, @uri.to_s, @options)
-      if response.parse.class == Hash
-        response_body = response.body.empty? ? '' : response.parse.symbolize_keys!
-      else
-        response_body = response.body.empty? ? '' : response.parse
-      end
+      response_body = response.body.empty? ? '' : response.parse.symbolize_keys!
       response_headers = response.headers
       fail_or_return_response_body(response.code, response_body, response_headers)
     end

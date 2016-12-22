@@ -34,14 +34,14 @@ RSpec.configure do |config|
 
 end
 
-WebMock.disable_net_connect!
-
-VCR.configure do |c|
-  c.cassette_library_dir = 'spec/fixtures/cassettes'
-  c.default_cassette_options = { record: :once }
-  c.hook_into :webmock
-  #hides API_KEY in the cassettes
-  c.filter_sensitive_data('<ENCODED X-Token>'){ ENV["API_KEY"] }
-  c.filter_sensitive_data('<ENCODED X-Token>'){ ENV["ORG_KEY"] }
-  c.filter_sensitive_data('<ENCODED X-Token>'){ ENV["USER_KEY"] }
-end
+# WebMock.disable_net_connect!
+#
+# VCR.configure do |c|
+#   c.cassette_library_dir = 'spec/fixtures/cassettes'
+#   c.default_cassette_options = { record: :once }
+#   c.hook_into :webmock
+#   #hides API_KEY in the cassettes
+#   c.filter_sensitive_data('<ENCODED X-Token>'){ ENV["API_KEY"] }
+#   c.filter_sensitive_data('<ENCODED X-Token>'){ ENV["ORG_KEY"] }
+#   c.filter_sensitive_data('<ENCODED X-Token>'){ ENV["USER_KEY"] }
+# end

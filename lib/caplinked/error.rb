@@ -9,7 +9,6 @@ module Caplinked
     end
 
     def initialize(code = nil, message = '', headers = {})
-
       super(message)
       @code = code
       @headers = headers

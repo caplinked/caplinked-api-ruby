@@ -1,0 +1,215 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.caplinked.com/api/v1/activities/workspace/5886
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Token:
+      - "<ENCODED X-Token>"
+      Connection:
+      - close
+      Host:
+      - sandbox.caplinked.com
+      User-Agent:
+      - http.rb/2.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 23 Dec 2016 01:23:20 GMT
+      Etag:
+      - W/"78c26fcbbe1935e205f4a3d8bab2f31d"
+      Server:
+      - caplinked
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 0eeb700b-e3ae-4396-875a-05df14207847
+      X-Runtime:
+      - '0.359989'
+      Content-Length:
+      - '22158'
+      Connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: '{"pagination":{"total_items":196,"total_pages":2,"page":1,"per_page":100},"events":[{"id":311537,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed this workspace","subject_type":"Workspace","subject_id":5886,"created_at":"2016-12-13T01:38:31.396Z"},{"id":311538,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-13T01:38:01.178Z"},{"id":311531,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0306.pdf","subject_type":"Asset","subject_id":37638,"created_at":"2016-12-13T01:33:30.558Z"},{"id":311533,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0307.pdf","subject_type":"Asset","subject_id":38188,"created_at":"2016-12-13T01:33:30.558Z"},{"id":311534,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0308.pdf","subject_type":"Asset","subject_id":38189,"created_at":"2016-12-13T01:33:30.558Z"},{"id":311535,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: gem update 2.pdf","subject_type":"Asset","subject_id":45903,"created_at":"2016-12-13T01:33:30.558Z"},{"id":311536,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: api_update.pdf","subject_type":"Asset","subject_id":46514,"created_at":"2016-12-13T01:33:30.558Z"},{"id":311532,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-13T01:33:30.558Z"},{"id":311529,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        folder: Folder 1","subject_type":"Folder","subject_id":32277,"created_at":"2016-12-13T01:33:30.549Z"},{"id":311530,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        folder: spec update","subject_type":"Folder","subject_id":32339,"created_at":"2016-12-13T01:33:30.549Z"},{"id":311416,"user_id":3,"user_name":"Brandon
+        Brown","workspace_id":5886,"verb":"created","message":"asked a question about
+        pg_0306.pdf: ''herro''","subject_type":"Comment","subject_id":4,"created_at":"2016-12-09T00:03:33.551Z"},{"id":311415,"user_id":3,"user_name":"Brandon
+        Brown","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":37638,"created_at":"2016-12-09T00:03:29.496Z"},{"id":311414,"user_id":3,"user_name":"Brandon
+        Brown","workspace_id":5886,"verb":"created","message":"asked a question about
+        api_update.pdf: ''hello\r\n''","subject_type":"Comment","subject_id":3,"created_at":"2016-12-09T00:02:55.946Z"},{"id":311412,"user_id":3,"user_name":"Brandon
+        Brown","workspace_id":5886,"verb":"viewed","message":"viewed this workspace","subject_type":"Workspace","subject_id":5886,"created_at":"2016-12-09T00:02:46.041Z"},{"id":311413,"user_id":3,"user_name":"Brandon
+        Brown","workspace_id":5886,"verb":"viewed","message":"viewed the file: api_update.pdf","subject_type":"Asset","subject_id":46514,"created_at":"2016-12-09T00:02:23.920Z"},{"id":311409,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed this workspace","subject_type":"Workspace","subject_id":5886,"created_at":"2016-12-08T18:35:40.828Z"},{"id":311411,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0306.pdf","subject_type":"Asset","subject_id":37638,"created_at":"2016-12-08T18:35:36.893Z"},{"id":311410,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        folder: move here","subject_type":"Folder","subject_id":36884,"created_at":"2016-12-08T18:35:36.886Z"},{"id":311403,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0308.pdf","subject_type":"Asset","subject_id":38189,"created_at":"2016-12-07T22:56:35.331Z"},{"id":311402,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0307.pdf","subject_type":"Asset","subject_id":38188,"created_at":"2016-12-07T22:56:35.331Z"},{"id":311401,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed this workspace","subject_type":"Workspace","subject_id":5886,"created_at":"2016-12-07T22:56:02.861Z"},{"id":311398,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-07T20:19:54.015Z"},{"id":311400,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0307.pdf","subject_type":"Asset","subject_id":38188,"created_at":"2016-12-07T20:19:52.391Z"},{"id":311399,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-07T20:19:52.391Z"},{"id":311397,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed this workspace","subject_type":"Workspace","subject_id":5886,"created_at":"2016-12-07T20:19:47.880Z"},{"id":311395,"user_id":3,"user_name":"Brandon
+        Brown","workspace_id":5886,"verb":"joined","message":"joined this Workspace","subject_type":null,"subject_id":null,"created_at":"2016-12-06T21:58:02.999Z"},{"id":311365,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-06T18:42:29.083Z"},{"id":311364,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-06T18:35:23.907Z"},{"id":311363,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-06T18:31:27.395Z"},{"id":311362,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-06T17:57:22.197Z"},{"id":311361,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-06T17:57:13.620Z"},{"id":311359,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-06T17:56:18.118Z"},{"id":311360,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-06T17:56:12.879Z"},{"id":311358,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-06T17:55:35.471Z"},{"id":311357,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-06T17:51:40.006Z"},{"id":311356,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-06T17:42:36.359Z"},{"id":311355,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-06T17:38:58.053Z"},{"id":311354,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-06T17:29:14.884Z"},{"id":311353,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-06T17:28:02.924Z"},{"id":311352,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed this workspace","subject_type":"Workspace","subject_id":5886,"created_at":"2016-12-06T17:27:56.352Z"},{"id":311344,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-05T21:44:50.691Z"},{"id":311343,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed this workspace","subject_type":"Workspace","subject_id":5886,"created_at":"2016-12-05T21:44:45.984Z"},{"id":311342,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"copied","message":"copied the file \"pg_0306.pdf\"
+        from \"spec update\" into the folder \"copy_me_1\"","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-05T21:42:58.230Z"},{"id":311340,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-05T21:41:49.920Z"},{"id":311339,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"updated","message":"updated the file:
+        api_update.pdf","subject_type":"Asset","subject_id":46514,"created_at":"2016-12-05T21:39:46.178Z"},{"id":311337,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"created","message":"added Brandon Brown
+        to group new_group","subject_type":"GroupMembership","subject_id":36649,"created_at":"2016-12-05T21:31:49.976Z"},{"id":311336,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"created","message":"added Brandon Brown
+        to group All Members","subject_type":"GroupMembership","subject_id":36648,"created_at":"2016-12-05T21:31:49.921Z"},{"id":311335,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"created","message":"added Brandon Brown
+        to this workspace","subject_type":"Membership","subject_id":18476,"created_at":"2016-12-05T21:31:49.904Z"},{"id":311334,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"deleted","message":"removed John Smith
+        from this workspace","subject_type":"Membership","subject_id":18475,"created_at":"2016-12-05T21:31:12.183Z"},{"id":311333,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"deleted","message":"removed John Smith
+        from group new_group","subject_type":"GroupMembership","subject_id":36646,"created_at":"2016-12-05T21:31:12.140Z"},{"id":311332,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"created","message":"added John Smith to
+        group All Members","subject_type":"GroupMembership","subject_id":36647,"created_at":"2016-12-05T21:30:19.825Z"},{"id":311331,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"created","message":"added John Smith to
+        this workspace","subject_type":"Membership","subject_id":18475,"created_at":"2016-12-05T21:30:19.815Z"},{"id":311330,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"created","message":"added John Smith to
+        group new_group","subject_type":"GroupMembership","subject_id":36646,"created_at":"2016-12-05T21:30:19.790Z"},{"id":311329,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"revoked","message":"set workspace access
+        expiration to false for group: new_group","subject_type":"Group","subject_id":26403,"created_at":"2016-12-05T21:18:33.448Z"},{"id":311328,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"added","message":"set workspace access
+        to expire on 2017-03-03 for group: new_group","subject_type":"Group","subject_id":26403,"created_at":"2016-12-05T21:15:56.937Z"},{"id":311327,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"granted","message":"granted Download Watermarked
+        rights for group: new_group","subject_type":"Group","subject_id":26403,"created_at":"2016-12-05T21:11:48.347Z"},{"id":311326,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"granted","message":"granted View Watermarked
+        rights for group: new_group","subject_type":"Group","subject_id":26403,"created_at":"2016-12-05T21:11:48.342Z"},{"id":311325,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"revoked","message":"revoked Drm Expires
+        After rights for group: new_group","subject_type":"Group","subject_id":26403,"created_at":"2016-12-05T21:10:13.363Z"},{"id":311324,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"granted","message":"granted Drm Expires
+        After rights for group: new_group","subject_type":"Group","subject_id":26403,"created_at":"2016-12-05T20:44:19.037Z"},{"id":311323,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"granted","message":"granted DRM rights
+        for group: new_group","subject_type":"Group","subject_id":26403,"created_at":"2016-12-05T20:44:19.031Z"},{"id":311321,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed this workspace","subject_type":"Workspace","subject_id":5886,"created_at":"2016-12-05T20:43:37.341Z"},{"id":311320,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"updated","message":"updated the group:
+        new_group","subject_type":"Group","subject_id":26403,"created_at":"2016-12-05T20:27:24.514Z"},{"id":311319,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"deleted","message":"deleted the group:
+        api_group_updated","subject_type":"Group","subject_id":26407,"created_at":"2016-12-05T20:08:37.806Z"},{"id":311318,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"updated","message":"updated file_managing_abilities
+        for group: api_group_updated","subject_type":"Group","subject_id":26407,"created_at":"2016-12-05T20:05:01.027Z"},{"id":311317,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"renamed","message":"renamed the group
+        api_group to api_group_updated","subject_type":"Group","subject_id":26407,"created_at":"2016-12-05T20:05:01.021Z"},{"id":311316,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"created","message":"added the group: api_group","subject_type":"Group","subject_id":26407,"created_at":"2016-12-05T19:55:00.406Z"},{"id":311298,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"removed","message":"revoked download access
+        to spec update for group: new_group","subject_type":"Group","subject_id":26403,"created_at":"2016-12-05T17:18:37.820Z"},{"id":311296,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"added","message":"granted download access
+        to spec update for group: new_group","subject_type":"Group","subject_id":26403,"created_at":"2016-12-05T17:11:59.174Z"},{"id":311295,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"created","message":"added the group: new_group","subject_type":"Group","subject_id":26403,"created_at":"2016-12-05T17:11:54.473Z"},{"id":311297,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"added","message":"granted download access
+        to Folder 1 for group: new_group","subject_type":"Group","subject_id":26403,"created_at":"2016-12-05T17:11:38.524Z"},{"id":311294,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed this workspace","subject_type":"Workspace","subject_id":5886,"created_at":"2016-12-05T17:10:40.832Z"},{"id":311293,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed this workspace","subject_type":"Workspace","subject_id":5886,"created_at":"2016-12-02T20:37:02.135Z"},{"id":311292,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"moved","message":"moved the folder \"Move_me_1\"
+        from \"\" into the folder \"spec_folder\"","subject_type":"Folder","subject_id":37110,"created_at":"2016-12-02T02:36:21.654Z"},{"id":311291,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"created","message":"added the folder:
+        Move_me_1","subject_type":"Folder","subject_id":37110,"created_at":"2016-12-02T02:32:14.696Z"},{"id":311289,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed this workspace","subject_type":"Workspace","subject_id":5886,"created_at":"2016-12-02T02:32:03.054Z"},{"id":311290,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"created","message":"added the folder:
+        copy_me_1","subject_type":"Folder","subject_id":37109,"created_at":"2016-12-02T02:31:53.454Z"},{"id":311288,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"updated_name","message":"renamed the folder
+        \"namename\" to \"spec update\"","subject_type":"Folder","subject_id":32339,"created_at":"2016-12-02T02:24:47.245Z"},{"id":311287,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"updated_name","message":"renamed the folder
+        \"Folder 2\" to \"namename\"","subject_type":"Folder","subject_id":32339,"created_at":"2016-12-02T02:17:25.810Z"},{"id":311286,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"deleted","message":"deleted the folder:
+        spec_folder","subject_type":"Folder","subject_id":37108,"created_at":"2016-12-02T01:36:44.419Z"},{"id":311285,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"created","message":"added the folder:
+        spec_folder","subject_type":"Folder","subject_id":37108,"created_at":"2016-12-02T01:30:20.375Z"},{"id":311284,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"created","message":"added the folder:
+        spec_folder","subject_type":"Folder","subject_id":37107,"created_at":"2016-12-02T01:27:11.192Z"},{"id":311281,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0306.pdf","subject_type":"Asset","subject_id":37638,"created_at":"2016-12-02T00:51:08.991Z"},{"id":311282,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: \"api_update.pdf\"","subject_type":"Asset","subject_id":45906,"created_at":"2016-12-02T00:51:08.991Z"},{"id":311280,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed this workspace","subject_type":"Workspace","subject_id":5886,"created_at":"2016-12-02T00:51:07.976Z"},{"id":311279,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed the file: api_update.pdf","subject_type":"Asset","subject_id":45907,"created_at":"2016-12-01T23:48:43.552Z"},{"id":311277,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"moved","message":"moved the file \"api_update.pdf\"
+        from \"New folder\" into the folder \"New folder\"","subject_type":"Asset","subject_id":45907,"created_at":"2016-12-01T23:10:17.847Z"},{"id":311275,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"viewed","message":"viewed this workspace","subject_type":"Workspace","subject_id":5886,"created_at":"2016-12-01T23:09:06.291Z"},{"id":311276,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"created","message":"added the folder:
+        New folder","subject_type":"Folder","subject_id":37106,"created_at":"2016-12-01T23:08:57.184Z"},{"id":311268,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-01T22:55:46.338Z"},{"id":311269,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0307.pdf","subject_type":"Asset","subject_id":38188,"created_at":"2016-12-01T22:55:46.338Z"},{"id":311270,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0308.pdf","subject_type":"Asset","subject_id":38189,"created_at":"2016-12-01T22:55:46.338Z"},{"id":311271,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: gem update 2.pdf","subject_type":"Asset","subject_id":45903,"created_at":"2016-12-01T22:55:46.338Z"},{"id":311272,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: \"api_update.pdf\"","subject_type":"Asset","subject_id":45906,"created_at":"2016-12-01T22:55:46.338Z"},{"id":311273,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: api_update.pdf","subject_type":"Asset","subject_id":45907,"created_at":"2016-12-01T22:55:46.338Z"},{"id":311267,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0306.pdf","subject_type":"Asset","subject_id":37638,"created_at":"2016-12-01T22:55:46.338Z"},{"id":311266,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        folder: spec update","subject_type":"Folder","subject_id":32339,"created_at":"2016-12-01T22:55:46.330Z"},{"id":311265,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        folder: Folder 1","subject_type":"Folder","subject_id":32277,"created_at":"2016-12-01T22:55:46.330Z"},{"id":311259,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0306.pdf","subject_type":"Asset","subject_id":38187,"created_at":"2016-12-01T22:53:45.663Z"},{"id":311258,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0306.pdf","subject_type":"Asset","subject_id":37638,"created_at":"2016-12-01T22:53:45.663Z"},{"id":311260,"user_id":2,"user_name":"Jazz
+        Garcha","workspace_id":5886,"verb":"downloaded","message":"downloaded the
+        file: pg_0307.pdf","subject_type":"Asset","subject_id":38188,"created_at":"2016-12-01T22:53:45.663Z"}]}'
+    http_version: 
+  recorded_at: Fri, 23 Dec 2016 01:23:48 GMT
+recorded_with: VCR 3.0.3

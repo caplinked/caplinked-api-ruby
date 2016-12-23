@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://sandbox.caplinked.com/api/v1/folders/37128?workspace_id=5886
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Token:
+      - "<ENCODED X-Token>"
+      Connection:
+      - close
+      Host:
+      - sandbox.caplinked.com
+      User-Agent:
+      - http.rb/2.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 23 Dec 2016 01:48:38 GMT
+      Etag:
+      - W/"f45e04a1f4dc5c8131031c8fd9944e25"
+      Server:
+      - caplinked
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - e28ab2d6-a1cc-40f7-988b-f9b0e90ca453
+      X-Runtime:
+      - '0.079581'
+      Content-Length:
+      - '27'
+      Connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: '{"id":37128,"deleted":true}'
+    http_version: 
+  recorded_at: Fri, 23 Dec 2016 01:48:14 GMT
+recorded_with: VCR 3.0.3

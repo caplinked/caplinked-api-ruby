@@ -12,7 +12,7 @@ RSpec.describe "Request", :type => :request do
   end
 
   it "perform request" do
-    VCR.use_cassette("request/file_info") do
+    VCR.use_cassette("requests/file_info") do
       request = Caplinked::Request.new(client, :get, "/api/v1/files/38187", {:params=>{"workspace_id"=>5886}}).perform
 
       expect(request[:id]).to eq(38187)

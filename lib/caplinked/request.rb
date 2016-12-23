@@ -16,7 +16,7 @@ module Caplinked
     end
 
     def perform
-      headers = (@options.delete(:headers) || {}).merge('X-Token' => client.api_key)
+      headers = (@options.delete(:headers) || {}).merge('X-Token' => @client.api_key)
       @uri.query_values = @options.delete(:params)
       response = HTTP.headers(headers).request(@request_method, @uri.to_s, @options)
       response_body = response.body.empty? ? '' : response.parse.symbolize_keys!

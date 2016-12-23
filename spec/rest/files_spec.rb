@@ -11,14 +11,6 @@ describe Caplinked::Client, :vcr => true do
     end
   end
 
-  it 'Returns file info' do
-    VCR.use_cassette("files/file_info", :record => :none) do
-      file_info = client.get_file_info id: 38187, workspace_id: 5886
-
-      expect(file_info[:id]).to eq(38187)
-    end
-  end
-
   it 'Deletes file' do
     VCR.use_cassette("files/delete_file", :record => :none) do
       delete_file = client.delete_file workspace_id: 5886, id: 37639

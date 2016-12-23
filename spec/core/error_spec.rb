@@ -1,9 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe "Error", :type => :error do
-
   it "confirm value initialize" do
-
     error = Caplinked::Error.new(401, "Unauthorized", {
                         "Cache-Control"=>"no-cache",
                         "Content-Type"=>"application/json;
@@ -20,5 +18,4 @@ RSpec.describe "Error", :type => :error do
 
     expect(error.inspect).to eq("#<Caplinked::Error: Unauthorized>")
   end
-
 end

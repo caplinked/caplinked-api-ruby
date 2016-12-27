@@ -2,7 +2,7 @@ require 'simplecov'
 require 'vcr'
 require 'pry'
 require 'dotenv'
-require 'webmock'
+require 'webmock/rspec'
 
 Dotenv.load
 
@@ -31,17 +31,14 @@ require 'caplinked-api'
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 RSpec.configure do |config|
-
 end
 
 WebMock.disable_net_connect!
 
-VCR.configure do |c|
-  c.cassette_library_dir = 'spec/fixtures/cassettes'
-  c.default_cassette_options = { record: :once }
-  c.hook_into :webmock
-  #hides API_KEY in the cassettes
-  c.filter_sensitive_data('<ENCODED X-Token>'){ ENV["API_KEY"] }
-  c.filter_sensitive_data('<ENCODED X-Token>'){ ENV["ORG_KEY"] }
-  c.filter_sensitive_data('<ENCODED X-Token>'){ ENV["USER_KEY"] }
+def fixture_path
+  File.expand_path('../fixtures', __FILE__)
+end
+
+def fixture(file)
+  File.new(fixture_path + '/' + file)
 end

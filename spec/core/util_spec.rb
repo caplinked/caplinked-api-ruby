@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 RSpec.describe "Utils", :type => :utils do
-  client = Caplinked::Client.new api_key: ENV["API_KEY"], api_host: 'sandbox.caplinked.com', api_scheme: 'https'
+  client = Caplinked::Client.new api_key: "API_KEYS", api_host: 'sandbox.caplinked.com', api_scheme: 'https'
 
   it "perform get" do
     stub_request(:get, "https://sandbox.caplinked.com/api/v1/activities/workspace/5886").
       with(:headers => {'Connection'=>'close', 'Host'=>'sandbox.caplinked.com',
-        'User-Agent'=>'http.rb/2.1.0', 'X-Token'=>ENV["API_KEY"]}).
+        'User-Agent'=>'http.rb/2.1.0', 'X-Token'=>"API_KEYS"}).
       to_return(:status => 200, body: fixture('get.json'),
         headers: { content_type: 'application/json; charset=utf-8' })
 
@@ -19,7 +19,7 @@ RSpec.describe "Utils", :type => :utils do
   it "perform delete" do
     stub_request(:delete, "https://sandbox.caplinked.com/api/v1/folders/37128?workspace_id=5886").
       with(:headers => {'Connection'=>'close', 'Host'=>'sandbox.caplinked.com',
-        'User-Agent'=>'http.rb/2.1.0', 'X-Token'=>ENV["API_KEY"]}).
+        'User-Agent'=>'http.rb/2.1.0', 'X-Token'=>"API_KEYS"}).
       to_return(:status => 200, body: fixture('delete.json'),
         headers: { content_type: 'application/json; charset=utf-8' })
 
@@ -33,11 +33,11 @@ RSpec.describe "Utils", :type => :utils do
       with(:body => "{\"team\":{\"name\":\"api_team_x5\"}}",
         :headers => {'Connection'=>'close', 'Content-Type'=>'application/json',
         'Host'=>'sandbox.caplinked.com', 'User-Agent'=>'http.rb/2.1.0',
-        'X-Token'=>ENV["ORG_KEY"]}).
+        'X-Token'=>"API_KEYS"}).
       to_return(:status => 200, body: fixture('put.json'),
           headers: { content_type: 'application/json; charset=utf-8' })
 
-      client = Caplinked::Client.new api_key: ENV["ORG_KEY"],
+      client = Caplinked::Client.new api_key: "API_KEYS",
         api_host: 'sandbox.caplinked.com', api_scheme: 'https'
 
       put = client.perform_put("/api/v1/teams/183", {},
@@ -51,11 +51,11 @@ RSpec.describe "Utils", :type => :utils do
       with(:body => "{\"team\":{\"name\":\"api_teamx7\"}}",
         :headers => {'Connection'=>'close', 'Content-Type'=>'application/json',
         'Host'=>'sandbox.caplinked.com', 'User-Agent'=>'http.rb/2.1.0',
-        'X-Token'=>ENV["ORG_KEY"]}).
+        'X-Token'=>"API_KEYS"}).
       to_return(:status => 200, body: fixture('post.json'),
           headers: { content_type: 'application/json; charset=utf-8' })
 
-      client = Caplinked::Client.new api_key: ENV["ORG_KEY"], api_host: 'sandbox.caplinked.com', api_scheme: 'https'
+      client = Caplinked::Client.new api_key: "API_KEYS", api_host: 'sandbox.caplinked.com', api_scheme: 'https'
 
       post = client.perform_post("/api/v1/teams", {},
       "{\"team\":{\"name\":\"api_teamx7\"}}", {"Content-Type"=>"application/json"})
@@ -67,7 +67,7 @@ RSpec.describe "Utils", :type => :utils do
     stub_request(:put, "https://sandbox.caplinked.com/api/v1/files/upload?file_name=pg_0317.pdf&folder_id=32277&workspace_id=5886").
       with(:body => "/Users/jazz/caplinked/caplinked-api-ruby/spec/core/files/pg_0317.pdf",
         :headers => {'Connection'=>'close', 'Host'=>'sandbox.caplinked.com',
-        'User-Agent'=>'http.rb/2.1.0', 'X-Token'=>ENV["ORG_KEY"]}).
+        'User-Agent'=>'http.rb/2.1.0', 'X-Token'=>"API_KEYS"}).
       to_return(:status => 200, body: fixture('put_with_binary.json'),
           headers: { content_type: 'application/json; charset=utf-8' })
 

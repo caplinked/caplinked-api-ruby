@@ -78,4 +78,14 @@ RSpec.describe "Utils", :type => :utils do
       expect(put_with_binary[:file_name]).to eq('pg_0317.pdf')
   end
 
+  it "get error check" do
+    stub_request(:get, "https://sandbox.caplinked.com/api/v1/activities/workspace/5886").
+      with(:headers => {'Connection'=>'close', 'Host'=>'sandbox.caplinked.com',
+        'User-Agent'=>'http.rb/2.1.0', 'X-Token'=>"API_KEYS"}).
+      to_return(:status => 200, body: fixture('user_not_found.json'),
+        headers: { content_type: 'application/json; charset=utf-8' })
+
+    expect{client.perform_get("/api/v1/activities/workspace/5886?user_id=2233", {})}.to raise_error(StandardError)
+  end
+
 end

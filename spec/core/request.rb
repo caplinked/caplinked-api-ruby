@@ -12,6 +12,7 @@ RSpec.describe "Request", :type => :request do
 
     expect(request.client.api_host).to eq("sandbox.caplinked.com")
     expect(request.path).to eq("/api/v1/activities/workspace/5886")
+    expect(request.uri.inspect).to include("https://sandbox.caplinked.com/api/v1/activities/workspace/5886")
     expect(request.request_method).to eq(:get)
   end
 

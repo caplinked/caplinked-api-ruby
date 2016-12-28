@@ -16,6 +16,6 @@ RSpec.describe "Error", :type => :error do
                         "Connection"=>"Close"
                         })
 
-    expect(error.inspect).to eq("#<Caplinked::Error: Unauthorized>")
+    expect(error.inspect).to include("Error: Unauthorized")
   end
 end

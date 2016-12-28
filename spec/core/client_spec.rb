@@ -10,10 +10,10 @@ RSpec.describe "Client", :type => :client do
   end
 
   it "passing new values" do
-    client = Caplinked::Client.new api_key: ENV["API_KEY"], api_host: 'secure.caplinked.com', api_scheme: 'https'
+    client = Caplinked::Client.new api_key: "API_KEY", api_host: 'secure.caplinked.com', api_scheme: 'http'
 
     expect(client.api_host).to eq("secure.caplinked.com")
-    expect(client.api_scheme).to eq("https")
-    expect(client.api_key).to eq(ENV["API_KEY"])
+    expect(client.api_scheme).to eq("http")
+    expect(client.api_key).to eq("API_KEY")
   end
 end

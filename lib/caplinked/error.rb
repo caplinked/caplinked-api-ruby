@@ -4,7 +4,7 @@ module Caplinked
 
     class << self
       def from_response(body, headers)
-        new(body[:error]['code'], body[:error]['message'], headers)
+        new(body[:error][:code], body[:error][:message], headers)
       end
     end
 

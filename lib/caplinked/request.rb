@@ -19,14 +19,24 @@ module Caplinked
       headers = (@options.delete(:headers) || {}).merge('X-Token' => @client.api_key)
       @uri.query_values = @options.delete(:params)
       response = HTTP.headers(headers).request(@request_method, @uri.to_s, @options)
-      response_body = response.body.empty? ? '' : response.parse.symbolize_keys!
+      response_body = response.body.empty? ? '' : change_keys_to_symbols(response.parse)
       response_headers = response.headers
       fail_or_return_response_body(response.code, response_body, response_headers)
     end
 
   private
+    def change_keys_to_symbols(parsed_response)
+      if parsed_response.is_a?(Hash)
+        parsed_response.deep_symbolize_keys
+      elsif parsed_response.is_a?(Array)
+        parsed_response.map { |h| h.deep_symbolize_keys }
+      else
+        parsed_response
+      end
+    end
+
     def fail_or_return_response_body(code, body, headers)
-      raise(Caplinked::Error.from_response(body, headers)) if body[:error].present?
+      raise(Caplinked::Error.from_response(body, headers)) if body.is_a?(Hash) && body[:error].present?
       body
     end
   end

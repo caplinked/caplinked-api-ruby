@@ -12,7 +12,7 @@ RSpec.describe "Utils", :type => :utils do
 
     get = client.perform_get("/api/v1/activities/workspace/5886", {})
 
-    expect(get[:pagination]).to include({"total_pages"=>2, "page"=>1, "per_page"=>100})
+    expect(get[:pagination]).to include({:total_pages=>2, :page=>1, :per_page=>100})
     expect(get[:events].count).to eq(100)
   end
 

@@ -1,6 +1,6 @@
 module Caplinked
   class Error < StandardError
-    attr_reader :code, :message, :headers
+    attr_reader :code, :headers
 
     class << self
       def from_response(body, headers)

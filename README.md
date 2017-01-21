@@ -1,6 +1,6 @@
 # caplinked-api
 
-Ruby SDK for Caplinked's API  
+Ruby SDK for Caplinked's API
 Documentation at https://developer.caplinked.com/docs
 
 ## Quick start guide:
@@ -206,33 +206,33 @@ list_all_group_members = client.list_all_group_members id: group[:id], workspace
 Get organization info
 
 ```
-get_organization_info = client.get_organization_info id: organization[:id]
+get_organization_info = client.get_organization_info
 ```
 Update organization info
 
 ```
-update_organization_info = client.update_organization_info id: organization[:id], name: 'name', description: 'description', location: 'location', billing_email: 'billing email address', url: 'url'
+update_organization_info = client.update_organization_info name: 'name', description: 'description', location: 'location', billing_email: 'billing email address', url: 'url'
 ```
 
 Update organization support info
 
 ```
-update_organization_support_info = client.update_organization_support_info id: organization[:id], email: 'support email', phone_number: 'support phone number', website: 'support website'
+update_organization_support_info = client.update_organization_support_info email: 'support email', phone_number: 'support phone number', website: 'support website'
 ```
 Add organization member
 
 ```
-add_organization_member = client.add_organization_member id: organization[:id], user_id: user[:id]
+add_organization_member = client.add_organization_member user_id: user[:id]
 ```
 remove organization member
 
 ```
-remove_organization_member = client.remove_organization_member id: 4639, user_id: 101
+remove_organization_member = client.remove_organization_member user_id: 101
 ```
 show organization members
 
 ```
-show_organization_members = client.show_organization_members id: organization[:id]
+show_organization_members = client.show_organization_members
 ```
 
 ##Permissions
@@ -255,6 +255,12 @@ Create team
 ```
 create_team = client.create_team team: { name: 'name', allowed_workspaces: 5, allowed_admins: 5, drm_enabled: false, watermarking: false, suppress_emails: false }
 ```
+Get list of teams within the organization
+
+```
+get_team_list = client.get_list_of_teams
+```
+
 Get team info
 
 ```

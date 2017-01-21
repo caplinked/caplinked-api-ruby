@@ -7,6 +7,10 @@ module Caplinked
         perform_post('/api/v1/teams', nil, body.to_json, {'Content-Type' => 'application/json'} )
       end
 
+      def get_list_of_teams(options = {})
+        perform_get('/api/v1/teams')
+      end
+
       def get_team_info(options = {})
         params = options.stringify_keys.slice('id')
         id = params.delete('id')

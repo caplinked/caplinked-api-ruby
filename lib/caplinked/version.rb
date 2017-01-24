@@ -9,12 +9,12 @@ module Caplinked
 
     # @return [Integer]
     def minor
-      1
+      2
     end
 
     # @return [Integer]
     def patch
-      1
+      0
     end
 
     # @return [Integer, NilClass]

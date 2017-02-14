@@ -54,7 +54,7 @@ RSpec.describe "Utils", :type => :utils do
 
   it "perform put_with_binary_data" do
      stub_request(:put, "https://sandbox.caplinked.com/api/v1/files/upload?file_name=pg_0317.pdf&folder_id=32277&workspace_id=5886").
-       with(:body => "/Users/arons/Dev/caplinked-api-ruby/spec/core/files/pg_0317.pdf",
+       with(:body => File.join(File.dirname(__FILE__), "/files/pg_0317.pdf"),
             :headers => {'Connection'=>'close', 'Host'=>'sandbox.caplinked.com', 'User-Agent'=>'http.rb/2.2.1', 'X-Token'=>'API_KEYS'}).
        to_return(:status => 200, :body => fixture('put_with_binary.json'), :headers => { content_type: 'application/json; charset=utf-8' })
 

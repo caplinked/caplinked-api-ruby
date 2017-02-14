@@ -9,7 +9,7 @@ module Caplinked
 
     # @return [Integer]
     def minor
-      2
+      3
     end
 
     # @return [Integer]

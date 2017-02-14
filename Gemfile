@@ -10,8 +10,7 @@ group :development, :test do
   gem "rdoc", "~> 3.12"
   gem "jeweler", "~> 2.0.1"
   gem "simplecov", ">= 0"
-  gem "webmock", "~> 2.1.0"
-  gem "vcr", "~> 3.0.3"
+  gem "webmock", "~> 2.3.2"
   gem "pry"
   gem "dotenv", "~>2.1.1"
 end

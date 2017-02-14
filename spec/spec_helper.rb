@@ -1,8 +1,9 @@
 require 'simplecov'
-require 'vcr'
 require 'pry'
 require 'dotenv'
 require 'webmock/rspec'
+
+WebMock.disable_net_connect!
 
 Dotenv.load
 
@@ -31,9 +32,8 @@ require 'caplinked-api'
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 RSpec.configure do |config|
-end
 
-WebMock.disable_net_connect!
+end
 
 def fixture_path
   File.expand_path('../fixtures', __FILE__)

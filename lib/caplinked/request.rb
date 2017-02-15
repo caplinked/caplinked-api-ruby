@@ -16,15 +16,27 @@ module Caplinked
     end
 
     def perform
-      headers = (@options.delete(:headers) || {}).merge('X-Token' => @client.api_key)
       @uri.query_values = @options.delete(:params)
-      response = HTTP.headers(headers).request(@request_method, @uri.to_s, @options)
+      response = HTTP.headers(req_headers).request(@request_method, @uri.to_s, @options)
       response_body = response.body.empty? ? '' : change_keys_to_symbols(response.parse)
       response_headers = response.headers
       fail_or_return_response_body(response.code, response_body, response_headers)
     end
 
   private
+
+    def req_headers
+      expiration = 5.minutes.from_now.utc.to_s
+      signature = "Method=HMAC-SHA256 Signature=" + OpenSSL::HMAC.hexdigest('SHA256', @client.api_secret_key, [@client.api_key.to_s, @client.api_user_token.to_s,expiration].join)
+      default_headers = {
+        'x-api-key' => @client.api_key,
+        'x-api-user-token' => @client.api_user_token,
+        'x-api-exp-date' => expiration,
+        'x-api-signature' => signature
+      }
+      (@options.delete(:headers) || {}).merge(default_headers)
+    end
+
     def change_keys_to_symbols(parsed_response)
       if parsed_response.is_a?(Hash)
         parsed_response.deep_symbolize_keys

@@ -9,12 +9,15 @@ module Caplinked
   class Client
     include Caplinked::Utils
     include Caplinked::REST::API
-    attr_accessor :api_key, :api_host, :api_scheme
+    attr_accessor :api_key, :api_secret_key, :api_user_token, :api_host, :api_scheme
 
     # Usage:
     # client = Caplinked::Client.new api_key: '...', api_host: 'sandbox.caplinked.com'
-    # client.upload_file file_name: '...', 
+    # client.upload_file file_name: '...',
     def initialize(options = {})
+      options[:api_key] ||= ''
+      options[:api_secret_key] ||= ''
+      options[:api_user_token] ||= ''
       options[:api_host] ||= 'sandbox.caplinked.com'
       options[:api_scheme] ||= 'https'
 

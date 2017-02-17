@@ -21,11 +21,16 @@ client = Caplinked::Client.new api_host: 'sandbox.caplinked.com', api_scheme: 'h
 client.api_key = 'YOUR_PUBLIC_API_KEY'
 client.api_secret_key = 'YOUR_SECRET_API_KEY'
 client.api_user_token = 'USER_RESOURCE_IDENTIFIER_TOKEN'
+```
 
+Get User Info
+
+```
 # Info about the current user (in this case John Smith, an organization admin)
 
 client.get_user_info
 
+# response
 {
   "id": 9818,
   "first_name": "John",
@@ -39,6 +44,7 @@ client.get_user_info
 
 client.show_organization_members
 
+# response
 {
   "users": [
     {
@@ -61,10 +67,26 @@ client.show_organization_members
     }
   ]
 }
+```
 
+Make API calls for a different user resource
+
+```
 # Switch to Jina's user token
 
 client.api_user_token = 'e05b83c6714120fb87a176241bc2031f22f5cf4a'
+
+client.get_user_info 
+
+# response
+{
+  "id": 9820,
+  "first_name": "Jina",
+  "last_name": "Baker",
+  "email": "jina@example.com",
+  "time_zone": "Pacific Time (US & Canada)",
+  "user_token": "e05b83c6714120fb87a176241bc2031f22f5cf4a"
+}
 
 ```
 ## Activities:

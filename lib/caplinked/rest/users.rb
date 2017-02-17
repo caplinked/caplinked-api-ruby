@@ -17,8 +17,8 @@ module Caplinked
       end
 
       def delete_user(options = {})
-        params = options.stringify_keys.slice('user')
-        perform_delete('/api/v1/users', params)
+        body = options.stringify_keys.slice('user')
+        perform_delete('/api/v1/users', nil, body.to_json, {'Content-Type' => 'application/json'})
       end
 
     end

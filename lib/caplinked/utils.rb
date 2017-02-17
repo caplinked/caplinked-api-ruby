@@ -8,8 +8,8 @@ module Caplinked
       perform_request(:get, path, { params: params })
     end
 
-    def perform_delete(path, params = {})
-      perform_request(:delete, path, { params: params })
+    def perform_delete(path, params = {}, body = {}, headers = {})
+      perform_request(:delete, path, { params: params, body: body, headers: headers })
     end
 
     def perform_put(path, params = {}, body = {}, headers = {})

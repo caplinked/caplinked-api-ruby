@@ -3,6 +3,8 @@
 Ruby SDK for Caplinked's API
 Documentation at https://developer.caplinked.com/docs
 
+Changelog at https://developer.caplinked.com/api-changelog
+
 ## Quick start guide:
 
 Add Rubygem to Bundle:
@@ -14,7 +16,78 @@ gem 'caplinked-api'
 Assign Client
 
 ```
-client = Caplinked::Client.new api_key: 'YOUR_KEY_HERE', api_host: 'sandbox.caplinked.com', api_scheme: 'https'
+client = Caplinked::Client.new api_host: 'sandbox.caplinked.com', api_scheme: 'https'
+
+client.api_key = 'YOUR_PUBLIC_API_KEY'
+client.api_secret_key = 'YOUR_SECRET_API_KEY'
+client.api_user_token = 'USER_RESOURCE_IDENTIFIER_TOKEN'
+```
+
+Get User Info
+
+```
+# Info about the current user (in this case John Smith, an organization admin)
+
+client.get_user_info
+
+# response
+{
+  "id": 9818,
+  "first_name": "John",
+  "last_name": "Smith",
+  "email": "john@example.com",
+  "time_zone": "Pacific Time (US & Canada)",
+  "user_token": "fc39b9012e47a5713932094065e17fb7ab76e83d"
+}
+
+# As an organization admin, list all members of your organization
+
+client.show_organization_members
+
+# response
+{
+  "users": [
+    {
+      "id": 9818,
+      "first_name": "John",
+      "last_name": "Smith",
+      "email": "john@example.com",
+      "time_zone": "Pacific Time (US & Canada)",
+      "user_token": "fc39b9012e47a5713932094065e17fb7ab76e83d"
+      "organization_admin": true
+    },
+    {
+      "id": 9820,
+      "first_name": "Jina",
+      "last_name": "Baker",
+      "email": "jina@example.com",
+      "time_zone": "Pacific Time (US & Canada)",
+      "user_token": "e05b83c6714120fb87a176241bc2031f22f5cf4a",
+      "organization_admin": false
+    }
+  ]
+}
+```
+
+Make API calls for a different user resource
+
+```
+# Switch to Jina's user token
+
+client.api_user_token = 'e05b83c6714120fb87a176241bc2031f22f5cf4a'
+
+client.get_user_info 
+
+# response
+{
+  "id": 9820,
+  "first_name": "Jina",
+  "last_name": "Baker",
+  "email": "jina@example.com",
+  "time_zone": "Pacific Time (US & Canada)",
+  "user_token": "e05b83c6714120fb87a176241bc2031f22f5cf4a"
+}
+
 ```
 ## Activities:
 
@@ -306,6 +379,12 @@ Update user
 
 ```
 update_user = client.update_user user: { email: 'new email address'}
+```
+
+Delete user
+
+```
+result = client.delete_user user: { id: 32523 }
 ```
 
 ##Workspace

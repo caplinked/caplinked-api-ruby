@@ -16,6 +16,11 @@ module Caplinked
         perform_put('/api/v1/users/me', nil, body.to_json, {'Content-Type' => 'application/json'} )
       end
 
+      def delete_user(options = {})
+        body = options.stringify_keys.slice('user')
+        perform_delete('/api/v1/users', nil, body.to_json, {'Content-Type' => 'application/json'})
+      end
+
     end
   end
 end

@@ -26,8 +26,8 @@ module Caplinked
   private
 
     def req_headers
-      expiration = 5.minutes.from_now.utc.to_s
-      signature = "Method=HMAC-SHA256 Signature=" + OpenSSL::HMAC.hexdigest('SHA256', @client.api_secret_key, [@client.api_key.to_s, @client.api_user_token.to_s,expiration].join)
+      expiration = 5.minutes.from_now.utc.to_i
+      signature = "Method=HMAC-SHA256 Signature=" + OpenSSL::HMAC.hexdigest('SHA256', @client.api_secret_key, [@client.api_key.to_s, @client.api_user_token.to_s, expiration.to_s].join)
       default_headers = {
         'x-api-key' => @client.api_key,
         'x-api-user-token' => @client.api_user_token,

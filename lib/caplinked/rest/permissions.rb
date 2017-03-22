@@ -12,7 +12,7 @@ module Caplinked
         params = options.stringify_keys.slice('id')
         id = params.delete('id')
         body = options.stringify_keys.slice('workspace_id', 'group_id', 'verb', 'folder_action')
-        perform_put('/api/v1/permissions/folders/' + id.to_s, nil, body.to_json, {'Content-Type' => 'application/json'} )
+        perform_put('/api/v1/permissions/folders/' + id.to_s, {}, body.to_json, {'Content-Type' => 'application/json'} )
       end
 
     end

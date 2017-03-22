@@ -9,7 +9,7 @@ module Caplinked
 
       def create_workspace(options = {})
         body = options.stringify_keys.slice('team_id', 'workspace')
-        perform_post('/api/v1/workspaces', nil, body.to_json, {'Content-Type' => 'application/json'} )
+        perform_post('/api/v1/workspaces', {}, body.to_json, {'Content-Type' => 'application/json'} )
       end
 
       def get_workspace_info(options = {})
@@ -19,10 +19,9 @@ module Caplinked
       end
 
       def update_workspace_info(options = {})
-        params = {}
         body = options.stringify_keys.slice('id', 'workspace')
         id = body.delete('id')
-        perform_put('/api/v1/workspaces/' + id.to_s, params, body.to_json, { 'Content-Type' => 'application/json' } )
+        perform_put('/api/v1/workspaces/' + id.to_s, {}, body.to_json, { 'Content-Type' => 'application/json' } )
       end
     end
   end

@@ -4,7 +4,7 @@ module Caplinked
 
       def create_user(options = {})
         body = options.stringify_keys.slice('user')
-        perform_post('/api/v1/users', nil, body.to_json, {'Content-Type' => 'application/json'} )
+        perform_post('/api/v1/users', {}, body.to_json, {'Content-Type' => 'application/json'} )
       end
 
       def get_user_info(options = {})
@@ -13,12 +13,12 @@ module Caplinked
 
       def update_user(options = {})
         body = options.stringify_keys.slice('user')
-        perform_put('/api/v1/users/me', nil, body.to_json, {'Content-Type' => 'application/json'} )
+        perform_put('/api/v1/users/me', {}, body.to_json, {'Content-Type' => 'application/json'} )
       end
 
       def delete_user(options = {})
         body = options.stringify_keys.slice('user')
-        perform_delete('/api/v1/users', nil, body.to_json, {'Content-Type' => 'application/json'})
+        perform_delete('/api/v1/users', {}, body.to_json, {'Content-Type' => 'application/json'})
       end
 
     end

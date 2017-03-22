@@ -2,9 +2,8 @@ module Caplinked
   module REST
     module Downloads
       def create_zip_file(options = {})
-        params = {}
         body = options.stringify_keys.slice('workspace_id', 'download')
-        perform_post('/api/v1/downloads', params, body.to_json, { 'Content-Type' => 'application/json' })
+        perform_post('/api/v1/downloads', {}, body.to_json, { 'Content-Type' => 'application/json' })
       end
 
       def single_file_download(options = {})
@@ -20,9 +19,9 @@ module Caplinked
       end
 
       def delete_download(options = {})
-        params = options.stringify_keys.slice('id', 'workspace_id')
-        id = params.delete('id')
-        perform_delete('/api/v1/downloads/' + id.to_s, params)
+        body = options.stringify_keys.slice('id', 'workspace_id')
+        id = body.delete('id')
+        perform_delete('/api/v1/downloads/' + id.to_s, {}, body.to_json, { 'Content-Type' => 'application/json' })
       end
 
       def get_zip(options = {})

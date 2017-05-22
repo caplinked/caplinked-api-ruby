@@ -7,6 +7,7 @@ require 'caplinked/rest/organizations'
 require 'caplinked/rest/permissions'
 require 'caplinked/rest/teams'
 require 'caplinked/rest/users'
+require 'caplinked/rest/watermarks'
 require 'caplinked/rest/workspaces'
 
 module Caplinked
@@ -21,6 +22,7 @@ module Caplinked
       include Caplinked::REST::Permissions
       include Caplinked::REST::Teams
       include Caplinked::REST::Users
+      include Caplinked::REST::Watermarks
       include Caplinked::REST::Workspaces
     end
   end

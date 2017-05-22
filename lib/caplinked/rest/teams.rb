@@ -41,6 +41,12 @@ module Caplinked
         perform_get('/api/v1/teams/' + id.to_s + '/memberships', nil )
       end
 
+      def get_list_of_team_watermarks(options = {})
+        params = options.stringify_keys.slice('id')
+        id = params.delete('id')
+        perform_get('/api/v1/teams/' + id.to_s + '/watermark_settings', nil )
+      end
+
     end
   end
 end

@@ -205,7 +205,7 @@ Move folder
 move_folder = client.move_folder id: folder[:id], workspace_id: 1, destination_folder_id: folder[:id]
 ```
 
-##Groups:
+## Groups:
 List all groups in workspace
 
 ```
@@ -274,7 +274,7 @@ List all group members
 list_all_group_members = client.list_all_group_members id: group[:id], workspace_id: 1
 ```
 
-##Organizations
+## Organizations
 
 Get organization info
 
@@ -308,7 +308,7 @@ show organization members
 show_organization_members = client.show_organization_members
 ```
 
-##Permissions
+## Permissions
 
 Get folder permissions
 
@@ -321,7 +321,7 @@ Update folder permissions
 update_folder_permissions = client.update_folder_permissions id: folder[:id], workspace_id: 1, group_id: group[:id], verb: 'grant', folder_action: 'download'
 ```
 
-##Teams
+## Teams
 
 Create team
 
@@ -362,7 +362,7 @@ Get list of team members
 get_list_of_team_members = client.get_list_of_team_members id: team[:id]
 ```
 
-##Users
+## Users
 
 Create user
 
@@ -387,7 +387,7 @@ Delete user
 result = client.delete_user user: { id: 32523 }
 ```
 
-##Watermark
+## Watermark
 Get Watermark Setting
 
 ```
@@ -414,7 +414,7 @@ List all Watermark Settings for a team
 client.get_list_of_team_watermarks id: 3456
 ```
 
-##Workspace
+## Workspace
 List all workspaces for a team
 
 ```

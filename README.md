@@ -387,6 +387,33 @@ Delete user
 result = client.delete_user user: { id: 32523 }
 ```
 
+##Watermark
+Get Watermark Setting
+
+```
+client.get_watermark id: 12345
+```
+Create Watermark Setting
+
+```
+client.create_watermark team_id: 123, custom_text: 'this is my watermark text'
+```
+Update Watermark Setting
+
+```
+client.update_watermark id: 1234, custom_text: 'new text', rotation: -45, opacity: .8
+```
+Delete Watermark Setting
+
+```
+client.delete_watermark id: 1234
+```
+List all Watermark Settings for a team
+
+```
+client.get_list_of_team_watermarks id: 3456
+```
+
 ##Workspace
 List all workspaces for a team
 

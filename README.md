@@ -1,4 +1,4 @@
-# caplinked-api
+# caplinked-api-ruby
 
 ## Overview
 

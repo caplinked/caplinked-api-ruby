@@ -19,6 +19,8 @@ gem 'caplinked-api'
 Assign Client
 
 ```
+require 'caplinked-api'
+
 client = Caplinked::Client.new api_host: 'sandbox.caplinked.com', api_scheme: 'https'
 
 client.api_key = 'YOUR_PUBLIC_API_KEY'
@@ -328,6 +330,7 @@ update_folder_permissions = client.update_folder_permissions id: folder[:id], wo
 
 Create team
 
+Note: The creating user is automatically added to a team. Trying to add the same user again will throw a Caplinked::Error.
 ```
 create_team = client.create_team team: { name: 'name', allowed_workspaces: 5, allowed_admins: 5, drm_enabled: false, watermarking: false, suppress_emails: false }
 ```
@@ -425,6 +428,7 @@ list_all_workspaces_for_a_team = client.list_all_workspaces_for_a_team team_id: 
 ```
 Create Workspace
 
+Note: The user creating the workspace will automatically be added to that workspace.
 ```
 create_workspace = client.create_workspace team_id: team[:id], workspace: { name: 'name'}
 ```

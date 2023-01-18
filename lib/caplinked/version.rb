@@ -14,7 +14,7 @@ module Caplinked
 
     # @return [Integer]
     def patch
-      4
+      5
     end
 
     # @return [Integer, NilClass]

@@ -24,7 +24,7 @@ module Caplinked
       end
 
       def add_team_member(options = {})
-        body = options.stringify_keys.slice('id', 'user_id')
+        body = options.stringify_keys.slice('id', 'user_id', 'email')
         id = body.delete('id')
         perform_post('/api/v1/teams/' + id.to_s + '/memberships', {}, body.to_json, { 'Content-Type' => 'application/json' } )
       end

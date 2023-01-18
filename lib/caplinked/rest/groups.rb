@@ -61,7 +61,7 @@ module Caplinked
       end
 
       def add_group_member(options = {})
-        body = options.stringify_keys.slice('id', 'user_id', 'workspace_id', 'send_email')
+        body = options.stringify_keys.slice('id', 'user_id', 'email', 'workspace_id', 'send_email')
         id = body.delete('id')
         perform_post('/api/v1/groups/' + id.to_s + '/memberships', {}, body.to_json, { 'Content-Type' => 'application/json' } )
       end

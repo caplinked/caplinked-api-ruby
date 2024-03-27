@@ -17,8 +17,8 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 1.9.3'
 
   spec.add_dependency 'activesupport', '>= 4.0'
-  spec.add_dependency 'addressable', '~> 2.3'
-  spec.add_dependency 'http', '~> 2.0'
-  spec.add_dependency 'http-form_data', '~> 1.0'
-  spec.add_development_dependency 'bundler', '~> 1.0'
+  spec.add_dependency 'addressable', '~> 2.8'
+  spec.add_dependency 'http', '>= 5.0.2'
+  spec.add_dependency 'http-form_data', '~> 2.2'
+  spec.add_development_dependency 'bundler', '>= 2.1.2'
 end

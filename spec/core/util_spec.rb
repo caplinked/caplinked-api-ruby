@@ -8,7 +8,7 @@ RSpec.describe "Utils", :type => :utils do
       with(:headers => {
         'Connection'=>'close',
         'Host'=>'sandbox.caplinked.com',
-        'User-Agent'=>'http.rb/2.2.1',
+        'User-Agent'=>'http.rb/5.2.0',
         'X-Api-Exp-Date'=> /.+/,
         'X-Api-Key'=>'API_KEY',
         'X-Api-Signature'=> /Method=HMAC-SHA256 Signature=(.*)/,
@@ -26,7 +26,7 @@ RSpec.describe "Utils", :type => :utils do
       with(:headers => {
         'Connection'=>'close',
         'Host'=>'sandbox.caplinked.com',
-        'User-Agent'=>'http.rb/2.2.1',
+        'User-Agent'=>'http.rb/5.2.0',
         'X-Api-Exp-Date'=> /.+/,
         'X-Api-Key'=>'API_KEY',
         'X-Api-Signature'=> /Method=HMAC-SHA256 Signature=(.*)/,
@@ -40,11 +40,12 @@ RSpec.describe "Utils", :type => :utils do
   it "perform put" do
       stub_request(:put, "https://sandbox.caplinked.com/api/v1/teams/183").
         with(
-          :body => "{\"team\":{\"name\":\"api_team_x5\"}}",
+          :body => HTTP::Request::Body.new("{\"team\":{\"name\":\"api_team_x5\"}}"),
           :headers => {
             'Connection'=>'close',
             'Host'=>'sandbox.caplinked.com',
-            'User-Agent'=>'http.rb/2.2.1',
+            'User-Agent'=>'http.rb/5.2.0',
+            'Content-Type'=>'application/json',
             'X-Api-Exp-Date'=> /.+/,
             'X-Api-Key'=>'API_KEY',
             'X-Api-Signature'=> /Method=HMAC-SHA256 Signature=(.*)/,
@@ -60,11 +61,12 @@ RSpec.describe "Utils", :type => :utils do
   it "perform post" do
       stub_request(:post, "https://sandbox.caplinked.com/api/v1/teams").
         with(
-          :body => "{\"team\":{\"name\":\"api_teamx7\"}}",
+          :body => HTTP::Request::Body.new("{\"team\":{\"name\":\"api_teamx7\"}}"),
           :headers => {
             'Connection'=>'close',
             'Host'=>'sandbox.caplinked.com',
-            'User-Agent'=>'http.rb/2.2.1',
+            'User-Agent'=>'http.rb/5.2.0',
+            'Content-Type'=>'application/json',
             'X-Api-Exp-Date'=> /.+/,
             'X-Api-Key'=>'API_KEY',
             'X-Api-Signature'=> /Method=HMAC-SHA256 Signature=(.*)/,
@@ -80,11 +82,11 @@ RSpec.describe "Utils", :type => :utils do
   it "perform put_with_binary_data" do
       stub_request(:put, "https://sandbox.caplinked.com/api/v1/files/upload?file_name=pg_0317.pdf&folder_id=32277&workspace_id=5886").
         with(
-          :body => File.join(File.dirname(__FILE__), "/files/pg_0317.pdf"),
+          :body => HTTP::Request::Body.new(File.join(File.dirname(__FILE__), "/files/pg_0317.pdf")),
           :headers => {
             'Connection'=>'close',
             'Host'=>'sandbox.caplinked.com',
-            'User-Agent'=>'http.rb/2.2.1',
+            'User-Agent'=>'http.rb/5.2.0',
             'X-Api-Exp-Date'=> /.+/,
             'X-Api-Key'=>'API_KEY',
             'X-Api-Signature'=> /Method=HMAC-SHA256 Signature=(.*)/,
@@ -103,7 +105,7 @@ RSpec.describe "Utils", :type => :utils do
       with(:headers => {
         'Connection'=>'close',
         'Host'=>'sandbox.caplinked.com',
-        'User-Agent'=>'http.rb/2.2.1',
+        'User-Agent'=>'http.rb/5.2.0',
         'X-Api-Exp-Date'=> /.+/,
         'X-Api-Key'=>'API_KEY',
         'X-Api-Signature'=> /Method=HMAC-SHA256 Signature=(.*)/,

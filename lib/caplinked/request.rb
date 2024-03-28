@@ -1,4 +1,5 @@
 require 'addressable/uri'
+require 'active_support/all'
 require 'http'
 require 'http/form_data'
 require 'json'
